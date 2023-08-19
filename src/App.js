@@ -39,7 +39,7 @@ function App() {
         <Route exact path="/dv" element={<OrderDeliveryPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

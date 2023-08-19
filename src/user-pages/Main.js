@@ -3,14 +3,16 @@ import Header from "./Header";
 import Menu from "./Menu";
 import Cart from "./Cart";
 import Exhibition from "./Exhibition";
+import Footer from "../Footer";
 
 function Main() {
   return (
-    <main>
+    <main >
       <Header/>
       <Menu />
       <Cart />
       <Exhibition />
+      <Footer />
     </main>
   );
 }

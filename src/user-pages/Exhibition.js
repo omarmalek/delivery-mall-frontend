@@ -25,6 +25,7 @@ function Exhibition() {
   useEffect(() => {
     fetchProductsOfCurrentCatgory(currentCatId, page);
   }, [page, center, currentCatId]);
+  useEffect(()=>{setPage(1)},[currentCatId])
   //---------------------------- Fetch ------------------------------- 
   const fetchProductsOfCurrentCatgory = async (catid, page) => { 
     let pageIndex = page - 1;
@@ -66,7 +67,7 @@ function Exhibition() {
       {/* i will give pagination : (page, selectPage) insted of sending them to context */}
       <Pagination page={page} setPage={setPage}/> 
       <div>
-        <button onClick={openCart}>تحضير الطلبية</button>
+        <button onClick={openCart}>معاينة الطلبية</button>
       </div>
     </div>
   );

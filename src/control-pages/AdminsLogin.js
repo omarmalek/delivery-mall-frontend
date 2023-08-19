@@ -6,7 +6,7 @@ import { useGlobalContext } from "../context";
 
 const Login = () => {
   let navigate = useNavigate();
-  const { serverIP, serverPort} = useGlobalContext();
+  const {center} = useGlobalContext();
 
   // const PHONE_REGEX = /[0-9]{7,}$/;
 
@@ -53,7 +53,7 @@ const Login = () => {
     }
     try {
       const response = await axios.post(
-        `http://${serverIP}:${serverPort}/authenticateAdmins`,
+        `http://${center.serverIP}:${center.serverPort}/authenticateAdmins`,
         JSON.stringify({
           userName: username,
           userPassword: passsword,

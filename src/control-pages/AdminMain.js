@@ -6,14 +6,14 @@ import { useGlobalContext } from "../context";
 
 
 const AdminPage = () => {
-  const { serverIP, serverPort} = useGlobalContext();
+  const { center} = useGlobalContext();
   const navigate = useNavigate();
   useEffect(() => {
     checkAccess();
   }, []);
 
   const checkAccess = async () => {
-    const url = `http://${serverIP}:${serverPort}/checkAdminAuthentication`;
+    const url = `http://${center.serverIP}:${center.serverPort}/checkAdminAuthentication`;
 
     try {
       const response = await axios.get(url, {
@@ -27,12 +27,10 @@ const AdminPage = () => {
     } catch (error) {
       if (!error.response) {
         console.log("الخادم لا يستجيب");
-      } else {
-        if (error.response.status === 401) {
-          console.log("unauthorized!");
-        }
-        localStorage.removeItem("roleName");// inside else means anyway 
-          navigate("/admins");
+      }  else if (error.response.status === 401){
+            console.log("Unauthorized!, navgated to '/admins'");
+            localStorage.removeItem("roleName");
+            navigate("/admins");
       }
     }
   };

@@ -40,8 +40,9 @@ function Pagination({page, setPage}) {
     // let selectedPage = parseInt(e.target.value);
     selectPage(label);
   };
+  //________________________________________ UI ________________________________
   return (
-    <div className="container">
+    <div className="pagination-component">
       <div className="pagination">
         <button onClick={getPrevPage}>&laquo; السابق</button>
         {pageListIcons.map((label) => {
