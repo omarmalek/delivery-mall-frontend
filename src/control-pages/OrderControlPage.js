@@ -10,7 +10,7 @@ import { useGlobalContext } from "../context";
 
 export default function OrderControlPage() {
   const navigate = useNavigate();
-  const { serverIP, serverPort} = useGlobalContext();
+  const { center} = useGlobalContext();
 
   const [loading, setLoading] = useState(true);
   const [controlOrders, setControlOrders] = useState([]);
@@ -25,7 +25,7 @@ export default function OrderControlPage() {
     let pageSize = 10;
 
     try {
-      const url = `http://${serverIP}:${serverPort}/admin/controlorders/${pageIndex}/${pageSize}`;
+      const url = `http://${center.serverIP}:${center.serverPort}/admin/controlorders/${pageIndex}/${pageSize}`;
       const response = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",

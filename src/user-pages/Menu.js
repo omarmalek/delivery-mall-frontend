@@ -12,6 +12,7 @@ function Menu() {
     closeSerchBar,
     cartCount,
     handleSearch,
+    center
   } = useGlobalContext();
   // console.log("from menu >> isSearchBarshown is : " + isSearchBarshown);
 
@@ -22,8 +23,11 @@ function Menu() {
           <span>{cartCount > 0 ? cartCount : ""}</span>
         </i>
       </div>
-
+      <div>
+        <h4>أنت تتسوق في:   {center.name}</h4>
+      </div>
       <div className="select-container">
+      
         <select
           className="select-class"
           onChange={(e) => choosCatgory(e.target.value)}
@@ -42,6 +46,7 @@ function Menu() {
             : "No Cargory"}
         </select>
       </div>
+      
       <div
         className={
           isSearchBarshown ? "search-bar show-search-bar" : "search-bar"

@@ -5,7 +5,7 @@ import noProductImg from "../images/no product image.png";
 import UpdateForm from "./Update-form";
 
 const SingleProductShortUpdateDelete = ({ product, reSearch }) => {
-  const { getQuantity, serverIP, serverPort } = useGlobalContext();
+  const { getQuantity, center} = useGlobalContext();
 
   const [showSecondaryInfo, setShowSecondaryInfo] = React.useState(false);
   const [showUpdateForm, setShowUpdateForm] = useState(false);
@@ -51,7 +51,7 @@ const SingleProductShortUpdateDelete = ({ product, reSearch }) => {
     var result = window.confirm("Want to delete?");
     if (result) {
       try {
-        fetch(`http://${serverIP}:${serverPort}/product/${id}`, {
+        fetch(`http://${center.serverIP}:${center.serverPort}/product/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: localStorage.getItem("admintoken"),
@@ -84,7 +84,6 @@ const SingleProductShortUpdateDelete = ({ product, reSearch }) => {
             <div className="catid">
               <h4>{catgoryId}</h4>-<h4>{id}</h4>
             </div>
-
             <h2 className="info--name ">{name}</h2>
             <h3 className="info--price">
               {unitPrice} <i className="fa-solid fa-shekel-sign"></i>

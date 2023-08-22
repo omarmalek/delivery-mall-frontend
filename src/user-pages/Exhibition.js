@@ -29,7 +29,7 @@ function Exhibition() {
   //---------------------------- Fetch ------------------------------- 
   const fetchProductsOfCurrentCatgory = async (catid, page) => { 
     let pageIndex = page - 1;
-    let pageSize = 9;
+    let pageSize = 30;
     const url = `http://${center.serverIP}:${center.serverPort}/products/bycatgory/${catid}/${pageIndex}/${pageSize}`
     console.log(url)
     try {

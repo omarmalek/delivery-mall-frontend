@@ -28,10 +28,10 @@ const SingleProduct = ({ product }) => {
   // console.log("--------------productImages---------------");
   // console.log(productImages);
 
-  let image = "";
+  let byteImage = "";
   if (!img) {
     if (productImages[0]) {
-      image = "data:image/jpeg;base64," + productImages[0].picByte;
+      byteImage = "data:image/jpeg;base64," + productImages[0].picByte;
     }
   }
   let amount = 0;
@@ -51,7 +51,7 @@ const SingleProduct = ({ product }) => {
         className={amount > 0 ? "photo-and-basic choosen" : "photo-and-basic"}
       >
         <div className="img-container ">
-          <img src={img || image || noProductImg} alt="product" />
+          <img src={img || byteImage || noProductImg} alt="product" />
           {/* <i class="fa-solid fa-award"></i> */}
           {/* <i class="fa-solid fa-badge-percent"></i> */}
         </div>

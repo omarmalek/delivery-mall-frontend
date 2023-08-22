@@ -7,7 +7,7 @@ import { Link,useNavigate } from "react-router-dom";
 
 function HeaderControl() {
   const navigate = useNavigate();
-  const { showSearchBar, toggleNavbar, showNvbar } = useGlobalContext();
+  const { showSearchBar, toggleNavbar, showNvbar,center } = useGlobalContext();
 
   // const linksContainerRef = useRef(null);
   // const navbarRef = useRef(null);
@@ -24,7 +24,9 @@ function HeaderControl() {
           غزة ديليفري
         </Link>
       </div>
-
+      <div>
+        <h4>أنت تتسوق في:   {center.name}</h4>
+      </div>
       <div className={showNvbar ? "navbar active" : "navbar"}>
         <Link to="/admins">ادارة التطبيق</Link>
         {/* <Link to="/set">موظف التجهيز</Link> */}

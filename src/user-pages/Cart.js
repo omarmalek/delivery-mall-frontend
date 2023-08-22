@@ -50,7 +50,6 @@ const Cart = () => {
               {cart.map((product) => {
                 let sumOfRow = product.unitPrice * product.amount;
                 sumOfRow = parseFloat(sumOfRow.toFixed(2));
-
                 return (
                   <tr key={product.id}>
                     <td className="counter">

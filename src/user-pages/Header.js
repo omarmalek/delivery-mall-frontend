@@ -29,6 +29,7 @@ function Header() {
         <Link href="#">العروض</Link>
         <Link to="#">أسعار التوصيل</Link>
         <Link to={`/customerhistory`}> الطلبات السابقة</Link>
+        <Link to="/admins"> Testing</Link>
       </div>
 
       <div className="icons">

@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import axios from "axios";
 
 function UpdateForm({ prodctToUpdate, setShowUpdateForm, reSearch }) {
-  const { catgories,serverIP, serverPort } = useGlobalContext();
+  const { catgories,center} = useGlobalContext();
   const [product, setProduct] = useState(prodctToUpdate);
   const [imgesFiles, setImgesFiles] = useState("");
 
@@ -39,7 +39,7 @@ function UpdateForm({ prodctToUpdate, setShowUpdateForm, reSearch }) {
     if (product.name !== "") {
     }
     try {
-      const url = `http://${serverIP}:${serverPort}/productmedia`;
+      const url = `http://${center.serverIP}:${center.serverPort}/productmedia`;
       const response = axios.post(url, formData, {
         headers: {
           "Content-Type": "multipart/form-data",

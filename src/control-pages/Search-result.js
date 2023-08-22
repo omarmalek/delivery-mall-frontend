@@ -5,7 +5,7 @@ import HeaderControl from "./Header-Control";
 import { useGlobalContext } from "../context";
 
 function SearchResult() {
-  const { serverIP, serverPort} = useGlobalContext();
+  const {center} = useGlobalContext();
 
   const [resultOfSearch, setResultOfSearch] = useState([]);
   const [searchText, setSearchText] = useState(
@@ -38,11 +38,11 @@ function SearchResult() {
   const searchforProduct = (string) => {
     showAlert("", "جاري البحث عن المنتج ...");
     let pageIndex = 0;
-    let pageSize = 20;
+    let pageSize = 30;
 
     try {
       fetch(
-        `http://${serverIP}:${serverPort}/products/byname/${string}/${pageIndex}/${pageSize}`,
+        `http://${center.serverIP}:${center.serverPort}/products/byname/${string}/${pageIndex}/${pageSize}`,
         {
           headers: {
             "Content-Type": "application/json",
