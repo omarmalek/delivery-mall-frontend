@@ -5,18 +5,49 @@ import HeaderControl from "./Header-Control";
 import { useGlobalContext } from "../context";
 import { useState } from "react";
 
-import tempPhoto1 from "../images/item1.jfif"
-import tempPhoto2 from "../images/item2.jfif"
-import tempPhoto3 from "../images/item3.jfif"
-import tempPhoto4 from "../images/item4.jfif"
-import tempPhoto5 from "../images/item5.jfif"
-import tempPhoto6 from "../images/item6.jfif"
-import tempPhoto7 from "../images/item7.jfif"
-import tempPhoto8 from "../images/item8.jfif"
-import tempPhoto9 from "../images/item9.jfif"
-import tempPhoto10 from "../images/item10.jfif"
+import item1 from "../images/item1.jfif"
+import item2 from "../images/item2.jfif"
+import item3 from "../images/item3.jfif"
+import item4 from "../images/item4.jfif"
+import item5 from "../images/item5.jfif"
+import item6 from "../images/item6.jfif"
+import item7 from "../images/item7.jfif"
+import item8 from "../images/item8.jfif"
+import item9 from "../images/item9.jfif"
+import item10 from "../images/item10.jfif"
+import item11 from "../images/item11.jfif"
+import item12 from "../images/item12.jfif"
+import item13 from "../images/item13.jfif"
+import item14 from "../images/item14.jfif"
+import item15 from "../images/item15.jfif"
+import item16 from "../images/item16.jfif"
+import item17 from "../images/item17.jfif"
+import item18 from "../images/item18.jfif"
+import item19 from "../images/item19.jfif"
+import item20 from "../images/item20.jfif"
+import item21 from "../images/item21.jfif"
+import item22 from "../images/item22.jfif"
+import item23 from "../images/item23.jfif"
+import item24 from "../images/item24.jfif"
+import item25 from "../images/item25.jfif"
+import item26 from "../images/item26.jfif"
+import item27 from "../images/item27.jfif"
+import item28 from "../images/item28.jfif"
+import item29 from "../images/item29.jfif"
+import item30 from "../images/item30.jfif"
+import item31 from "../images/item31.jfif"
+import item32 from "../images/item32.jfif"
+import item33 from "../images/item33.jfif"
+import item34 from "../images/item34.jfif"
+import item35 from "../images/item35.jfif"
+import item36 from "../images/item36.jfif"
+import item37 from "../images/item37.jfif"
+import item38 from "../images/item38.jfif"
+import item39 from "../images/item39.jfif"
+import item40 from "../images/item40.jfif"
 
-const tempPhotosList = [tempPhoto1,tempPhoto2,tempPhoto3,tempPhoto4,tempPhoto5,tempPhoto6,tempPhoto7,tempPhoto8,tempPhoto9,tempPhoto10]
+
+const tempPhotosList = [item1,item2,item3,item4,item5,item6,item7,item8,item9,item10,item11,item12,item13,item14,item15,item16,item17,item18,item19,item20,item21,item22,item23,item24,item25,item26,item27,item28,item29,item30,item31,item32,item33,item34,item35,item36,item37,item38,item39,item40]
 
 const AdminPage = () => {
   const { center,log} = useGlobalContext();
@@ -82,10 +113,10 @@ const AdminPage = () => {
       for (let catId=1; catId<10; catId++){
       fackeProduct.catgoryId = catId;
         let counter = 0;
-        for (let p = 0; p < 11; p++){//max 10 because of photos
+        for (let p = 0; p < 11; p++){
           let randomName = Math.floor(Math.random()*100);
           fackeProduct.name ="بسكويت " + randomName;
-          let random = Math.floor(Math.random()*10);
+          let random = Math.floor(Math.random()*40);
           
           log("random is" , random)
           fackeProduct.img = tempPhotosList[random]
@@ -102,7 +133,6 @@ const AdminPage = () => {
             //body: JSON.stringify(fackeProduct)
           });
           console.log("Product added.")
-        
         } catch (error) {
           if (!error.response) {
             // console.log("Connection Failed");
