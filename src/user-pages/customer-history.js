@@ -10,7 +10,7 @@ function CustomerHistory() {
   console.log("CustomerHistory proccess is active. ");
   let navigate = useNavigate();
 
-  const { customer, serverIP, serverPort} = useGlobalContext();
+  const { customer, center} = useGlobalContext();
   const [loading, setLoading] = useState(true);
   //const [errMsg, setErrMsg] = useState(false);
 
@@ -40,7 +40,7 @@ function CustomerHistory() {
     setLoading(true);
     let pageIndex = 0;
     let pageSize = 10;
-    const url = `http://${serverIP}:${serverPort}/customerorders/${customer.id}/${pageIndex}/${pageSize}`;
+    const url = `http://${center.serverIP}:${center.serverPort}/customerorders/${customer.id}/${pageIndex}/${pageSize}`;
 
     try {
       const response = await axios.get(url, {
@@ -64,7 +64,7 @@ function CustomerHistory() {
   const fetchCustomerOldOrders = async () => {
     let pageIndex = 0;
     let pageSize = 10; // customer see the last 10 orders
-    const url = `http://${serverIP}:${serverPort}/customeroldorders/${customer.id}/${pageIndex}/${pageSize}`;
+    const url = `http://${center.serverIP}:${center.serverPort}/customeroldorders/${customer.id}/${pageIndex}/${pageSize}`;
     try {
       const response = await axios.get(url, {
         headers: {
@@ -107,6 +107,7 @@ function CustomerHistory() {
       <br></br>
       <br></br>
       <div className="header">
+      <h3>حسابك في مركز تسوق : {center.name}</h3>
         <h1 className="center">مرحبا {customer.name || "زبوننا الكريم"}</h1>
         <div className="logout">
           <button type="button" onClick={logout}>

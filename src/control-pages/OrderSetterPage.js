@@ -9,7 +9,7 @@ import { useGlobalContext } from "../context";
 
 export default function OrderSetterPage() {
   const navigate = useNavigate();
-  const { serverIP, serverPort} = useGlobalContext();
+  const { center} = useGlobalContext();
 
   const [loading, setLoading] = useState(true);
   const [setterOrders, setSetterOrders] = useState([]);
@@ -23,7 +23,7 @@ export default function OrderSetterPage() {
     let pageIndex = page - 1;
     let pageSize = 10;
     try {
-      const url = `http://${serverIP}:${serverPort}/admin/setterorders/${pageIndex}/${pageSize}`;
+      const url = `http://${center.serverIP}:${center.serverPort}/admin/setterorders/${pageIndex}/${pageSize}`;
       const response = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",

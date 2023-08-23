@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 export default function OrderOld() {
-  const { serverIP, serverPort} = useGlobalContext();
+  const { center} = useGlobalContext();
   
   const [loading, setLoading] = useState(true);
   const [serverStuck, setServerStuck] = useState(false);
@@ -20,7 +20,7 @@ export default function OrderOld() {
   const fetchSetterOrders = async () => {
     let pageIndex = 0;
     let pageSize = 10;
-    const url = `http://${serverIP}:${serverPort}/admin/controloldorders/${pageIndex}/${pageSize}`;
+    const url = `http://${center.serverIP}:${center.serverPort}/admin/controloldorders/${pageIndex}/${pageSize}`;
     try {
       const response = await axios.get(url, {
         headers: {

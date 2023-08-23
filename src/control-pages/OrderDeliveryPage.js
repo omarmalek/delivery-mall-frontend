@@ -9,7 +9,7 @@ import { useGlobalContext } from "../context";
 
 export default function OrderDeliveryPage() {
   const navigate = useNavigate();
-  const { serverIP, serverPort} = useGlobalContext();
+  const { center} = useGlobalContext();
 
   const [loading, setLoading] = useState(true);
   const [deliveryOrders, setDeliveryOrders] = useState([]);
@@ -23,7 +23,7 @@ export default function OrderDeliveryPage() {
     let pageIndex = page - 1;
     let pageSize = 10;
     try {
-      const url = `http://${serverIP}:${serverPort}/admin/deliveryorders/${pageIndex}/${pageSize}`;
+      const url = `http://${center.serverIP}:${center.serverPort}/admin/deliveryorders/${pageIndex}/${pageSize}`;
       const response = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",

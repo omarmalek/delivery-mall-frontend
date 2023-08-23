@@ -24,10 +24,11 @@ function Header() {
       </div>
 
       <div className={showNvbar ? "navbar active" : "navbar"} ref={navbarRef}>
-        <Link to="/" className="active">
-          الصفحة الرئيسية
+      <Link to="/main" className="active">الرئيسية</Link>
+       <Link to="/" >
+          مراكز التسوق
         </Link>
-        <Link href="#">العروض</Link>
+        
         <Link to="#">أسعار التوصيل</Link>
         <Link to={`/customerhistory`}> الطلبات السابقة</Link>
         <Link to="/admins"> Testing</Link>
@@ -44,7 +45,7 @@ function Header() {
           <FaSearch/>
         </i>
         <Link to="#" className="fas fa-heart"><FaHeart /></Link>
-        <Link to="/customerhistory" className="fa-solid fa-user"><FaUserAlt/></Link>
+        <Link to="/login" className="fa-solid fa-user"><FaUserAlt/></Link>
       </div>
     </header>
   );

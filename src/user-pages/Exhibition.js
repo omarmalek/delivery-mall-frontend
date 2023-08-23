@@ -38,6 +38,7 @@ function Exhibition() {
     } catch (error) {
       console.log("Error in fetchProductsOfCurrentCatgory");
       setLoading(false);
+      
       //setProductsAternativly(catid);
     }
   };
@@ -51,20 +52,23 @@ function Exhibition() {
       </div>
     );
   }
+  //log("productsOfCurrentCatgory",productsOfCurrentCatgory)
   return (
     <div>
       <div className="exhibition-component">
-        {productsOfCurrentCatgory ? (
+        {productsOfCurrentCatgory[0] ? (
           productsOfCurrentCatgory.map((product, index) => {
             return <SingleProduct key={product.id} product={product} />;
-          })
-        ) : 
-          <p>لا يوجد بيانات لعرضها</p>
+          }
+        )) : 
+          <h2>لا يوجد بيانات لعرضها</h2>
         }
       </div>
-      <Pagination page={page} setPage={setPage}/> 
-      <div>
+      {productsOfCurrentCatgory[0] && <Pagination page={page} setPage={setPage}/> }
+      <div className="check-order">
+      {productsOfCurrentCatgory[0] &&
         <button onClick={openCart}>معاينة الطلبية</button>
+        }
       </div>
     </div>
   );

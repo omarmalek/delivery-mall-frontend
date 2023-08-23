@@ -8,7 +8,7 @@ import Header from "./Header";
 const Login = () => {
   console.log("login proccess is active. ");
   let navigate = useNavigate();
-  const { customer, setCustomer, serverIP, serverPort } = useGlobalContext();
+  const { customer, setCustomer, center } = useGlobalContext();
   //const PHONE_REGEX = /[0-9]{7,}$/;
 
   const userRef = useRef();
@@ -32,7 +32,7 @@ const Login = () => {
       setErrMsg("أدخل اسم المستخدم وكلمةالمرور!");
       return;
     }
-    const url = `http://${serverIP}:${serverPort}/authenticate`;
+    const url = `http://${center.serverIP}:${center.serverPort}/authenticate`;
     console.log("login url is: ");
     console.log(url);
     try {
@@ -77,13 +77,15 @@ const Login = () => {
       }
     }
   };
-
+//_____________________________________UI___________________________________
   return (
     <div>
       <Header />
       <br></br>
       <br></br>
+      
       <div className="Signup-component">
+      <h3>حسابك في مركز تسوق : {center.name}</h3>
         <section>
           <p
             ref={errRef}
