@@ -15,7 +15,6 @@ function HeaderControl() {
     localStorage.setItem("admintoken", "");
     navigate("/admins");
   };
-
   return (
     <header>
       <div className="logo">
@@ -25,15 +24,13 @@ function HeaderControl() {
         </Link>
       </div>
       <div>
-        <h4>أنت تتسوق في:   {center.name}</h4>
+        <h4>  مركز التسوق :   {center.name}</h4>
       </div>
       <div className={showNvbar ? "navbar active" : "navbar"}>
         <Link to="/admins">ادارة التطبيق</Link>
         {/* <Link to="/set">موظف التجهيز</Link> */}
         {/* <Link to="/dv">موظف الديليفري</Link> */}
-
       </div>
-
       <div className="icons">
         <i className="fa fa-bars" id="menu-bars" onClick={toggleNavbar}>
         <FontAwesomeIcon icon={faBars}></FontAwesomeIcon> </i>

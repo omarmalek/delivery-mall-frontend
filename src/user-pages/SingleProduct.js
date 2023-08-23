@@ -1,7 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import noProductImg from "../images/no product image.png";
-// import { AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCheck } from "react-icons/ai";
+import { FaShekelSign, FaTimes } from "react-icons/fa";
+
 
 const SingleProduct = ({ product }) => {
   const {
@@ -59,7 +61,7 @@ const SingleProduct = ({ product }) => {
           <div className={amount > 0 ? "info incart " : "info"}>
             <h2 className="info--name ">{name}</h2>
             <h3 className="info--price">
-              {unitPrice} <i className="fa-solid fa-shekel-sign"></i>
+              {unitPrice} <i className="fa-solid fa-shekel-sign"><FaShekelSign/></i>
             </h3>
             {weight && <h4 className="info--weight">الوزن : {weight}</h4>}
             <button
@@ -99,8 +101,9 @@ const SingleProduct = ({ product }) => {
       >
         <button
           className="close-info-secondary fa fa-times"
-          onClick={toggleInfoSecondry}
-        ></button>
+          onClick={toggleInfoSecondry}>
+            <FaTimes/>
+        </button>
         {company && <h3 className="info--company">الشركة : {company}</h3>}
         {country && <p className="info--country">بلد المنشأ : {country}</p>}
         {desc && <p className="info--desc">الوصف : {desc}</p>}

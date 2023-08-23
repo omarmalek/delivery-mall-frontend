@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import logo from "../images/shopping-cart-bag-logo-260nw-small.png";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
+import {FaSearch, FaBars, FaHeart, FaUserAlt} from "react-icons/fa"
 
 function Header() {
   const {
@@ -31,16 +32,19 @@ function Header() {
         <Link to={`/customerhistory`}> الطلبات السابقة</Link>
         <Link to="/admins"> Testing</Link>
       </div>
-
       <div className="icons">
-        <i className="fa fa-bars" id="menu-bars" onClick={toggleNavbar}></i>
+        <i className="fa fa-bars" id="menu-bars" onClick={toggleNavbar}>
+        <FaBars/>
+        </i>
         <i
           className="fa fa-search"
           id="search-icon"
           onClick={showSearchBar}
-        ></i>
-        <Link to="#" className="fas fa-heart"></Link>
-        <Link to="/customerhistory" className="fa-solid fa-user"></Link>
+        >
+          <FaSearch/>
+        </i>
+        <Link to="#" className="fas fa-heart"><FaHeart /></Link>
+        <Link to="/customerhistory" className="fa-solid fa-user"><FaUserAlt/></Link>
       </div>
     </header>
   );

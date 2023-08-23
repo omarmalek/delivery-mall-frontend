@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import {FaCartArrowDown} from "react-icons/fa"
 // import cartLogo from "../images/red-simple-shopping-cart-icon-12.png";
 //import style from "./index.css";
 
@@ -20,6 +21,7 @@ function Menu() {
     <div className="menu-component">
       <div className="cart-toggle" onClick={openCart}>
         <i className="fas fa-shopping-cart">
+        <FaCartArrowDown/>
           <span>{cartCount > 0 ? cartCount : ""}</span>
         </i>
       </div>

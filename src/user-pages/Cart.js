@@ -1,7 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes,FaShekelSign,FaCartArrowDown} from "react-icons/fa";
 import CustomerInfo from "./CustomerInfo";
+
+
 
 const Cart = () => {
   const {
@@ -21,7 +23,6 @@ const Cart = () => {
   // const showPhoneBox = () => {
   //   setIsPhoneBoxShown(true);
   // };
-
   return (
     <div className="cart-scroll">
       <aside className={isCartOpen ? "cart show-cart" : "cart "}>
@@ -30,7 +31,7 @@ const Cart = () => {
             <FaTimes />
           </button>
           <h3>سلة المشتريات</h3>
-          <i className="fa fa-cart-shopping cart-logo">
+          <i className="fa fa-cart-shopping cart-logo"><FaCartArrowDown/>
             <span>{cartCount > 0 ? cartCount : ""}</span>
           </i>
         </div>
@@ -72,7 +73,6 @@ const Cart = () => {
                           value={product.amount + " " + product.packType}
                           readOnly
                         />
-
                         <button onClick={() => decreasProductAmount(product)}>
                           -
                         </button>
@@ -87,7 +87,9 @@ const Cart = () => {
                     <span> {product.unitName}</span> */}
                     </td>
                     <td>
-                      {sumOfRow} <i className="fa-solid fa-shekel-sign"></i>
+                      {sumOfRow} <i className="fa-solid fa-shekel-sign">
+                        <FaShekelSign/>
+                      </i>
                     </td>
                     <td>
                       <button
@@ -110,10 +112,12 @@ const Cart = () => {
               <button id="empty-cart" onClick={emptyCart}>
                 أفرغ السلة <i className="fas fa-trash"></i>
               </button>
+              <ul>
+ 
+    </ul>
             </div>
           </div>
         </div>
-
         <CustomerInfo />
       </aside>
     </div>

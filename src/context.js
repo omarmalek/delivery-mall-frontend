@@ -27,7 +27,7 @@ const getCustomerLocalInfo = () => {
 
 const AppProvider = ({ children }) => {
   //-----------------------------pre setup ----------------
-const baseServer = "localhost";
+const baseServer = "127.0.0.1";
 const baseServerPort = "8080";
 
 let startCenter = {
@@ -69,6 +69,7 @@ if(localStorage.getItem("prefairedCenter")){
   const [currentCatId, setCurrentCatId] = useState(1);
 
   // ===============================================   Effect     =================================
+  
   
   useEffect(() => {
     fetchCatgories();
@@ -206,16 +207,15 @@ if(localStorage.getItem("prefairedCenter")){
           },
           body: JSON.stringify(userOrder),
         })
-          .then((response) => response.json())
-          .then((data) => {
+          // .then((response) => response.json())
+          // .then((data) => {
             //window.location.assign(`/`);
-          });
+          // });
       } catch (error) {
         console.log(error);
       }
     }
-
-    window.location.assign(`/`);
+    window.location.assign(`/main`);
   };
 
   // const updateAnyOrder = (orderTarget, orderId, property, value) => {}; // to be done

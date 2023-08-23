@@ -296,7 +296,7 @@ header .icons i,
 header .icons a {
   cursor: pointer;
   margin-left: 0.5rem;
-  height: 2.2rem;
+  height: 2.2 rem;
   line-height: 2.2rem;
   width: 2.2rem;
   text-align: center;
@@ -304,6 +304,7 @@ header .icons a {
   color: var(--black);
   border-radius: 50%;
   background: #eee;
+  padding: 7px 15px;
 }
 
 header .icons i:hover,
@@ -350,14 +351,14 @@ header .icons #menu-bars {
   /* width: 50px; */
   /* border: 1px solid red; */
   margin-top: 5px;
-  color: rgb(223, 8, 8);
+  color: rgb(79, 133, 10);
 }
 .menu-component .cart-toggle i span {
   position: absolute;
-  top: -0.3rem;
+  top: -0.4rem;
   left: 40%;
   font-size: 1.3rem;
-  color: blue;
+  color: rgb(255, 60, 0);
 }
 
 .menu-component .search-bar {
@@ -748,6 +749,10 @@ table th {
   color: maroon;
   font-size: 1.3rem;
 }
+.single-product .info--price .fa-shekel-sign{
+  color: rgb(21, 128, 0); 
+  font-size: 1rem;
+}
 .single-product .info--weight {
   font-weight: 400;
   color: darkolivegreen;
@@ -903,7 +908,10 @@ table th {
 }
 .single-product-short .info--price {
   color: maroon;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+}
+.single-product-short .info--price i{
+  font-size: 1rem;
 }
 .single-product-short .info--weight {
   font-weight: 400;
