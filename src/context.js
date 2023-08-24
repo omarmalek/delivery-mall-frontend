@@ -179,7 +179,6 @@ if(localStorage.getItem("prefairedCenter")){
 
   const sendOrder = (e) => {
     e.preventDefault();
-
     let cartSummary = cart.map((product) => {
       return { productId: product.id, productAmount: product.amount };
     });
@@ -207,11 +206,8 @@ if(localStorage.getItem("prefairedCenter")){
           },
           body: JSON.stringify(userOrder),
         })
-          // .then((response) => response.json())
-          // .then((data) => {
-            //window.location.assign(`/`);
-          // });
       } catch (error) {
+        log("Error in sending order!")
         console.log(error);
       }
     }

@@ -17,7 +17,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <Link to="/" className="logo-name">
+        <Link to="/main" className="logo-name">
           <img src={logo} alt="logo" />
            ديليفري مول
         </Link>

@@ -3,8 +3,6 @@ import { useGlobalContext } from "../context";
 import { FaTimes,FaShekelSign,FaCartArrowDown} from "react-icons/fa";
 import CustomerInfo from "./CustomerInfo";
 
-
-
 const Cart = () => {
   const {
     isCartOpen,
@@ -16,13 +14,9 @@ const Cart = () => {
     cartCount,
     incProductQuantityInCart,
     decreasProductAmount,
-    // updateProductQuantity,
-    // showCustomerInfo,
+   
   } = useGlobalContext();
-  //const [isPhoneBoxShown, setIsPhoneBoxShown] = useState(true);
-  // const showPhoneBox = () => {
-  //   setIsPhoneBoxShown(true);
-  // };
+  //_______________________________UI______________________________________
   return (
     <div className="cart-scroll">
       <aside className={isCartOpen ? "cart show-cart" : "cart "}>
@@ -77,14 +71,6 @@ const Cart = () => {
                           -
                         </button>
                       </div>
-                      {/* <input
-                      className="input-amount"
-                      type="number"
-                      value={product.amount}
-                      min="1"
-                      onChange={doNothing}
-                    />
-                    <span> {product.unitName}</span> */}
                     </td>
                     <td>
                       {sumOfRow} <i className="fa-solid fa-shekel-sign">
@@ -113,7 +99,6 @@ const Cart = () => {
                 أفرغ السلة <i className="fas fa-trash"></i>
               </button>
               <ul>
- 
     </ul>
             </div>
           </div>
