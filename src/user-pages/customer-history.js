@@ -2,21 +2,26 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./Header";
 import Loading from "../Loading";
+import OrderDetailsCustomer from "./OrderDetails-Customer"
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 function CustomerHistory() {
-  console.log("customer - history");
-  console.log("CustomerHistory proccess is active. ");
+  //console.log("customer - history");
+  //console.log("CustomerHistory proccess is active. ");
   let navigate = useNavigate();
 
-  const { customer, center} = useGlobalContext();
+  const { customer, center,log} = useGlobalContext();
   const [loading, setLoading] = useState(true);
   //const [errMsg, setErrMsg] = useState(false);
 
   const [customerOrders, setCustomerOrders] = useState([]);
   const [customerOldOrders, setCustomerOldOrders] = useState([]);
-  const [lastOrder, setLastOrder] = useState({});//ToDo change to current order
+  const [currentOrder, setCurrentOrder] = useState({});
+  const [showOrderDetails, setShowOrderDetials] = useState(false);
+  
+ 
+  
   // =============================================   useEffect   ===========================================
 
   useEffect(() => {
@@ -28,11 +33,7 @@ function CustomerHistory() {
     }
   }, []);
 
-  useEffect(() => {
-    if (customerOrders.length > 0) {
-      setLastOrder(customerOrders[0]);
-    }
-  }, [customerOrders]);
+ 
 
   //  ============================================   fetch    ========================================
 
@@ -52,11 +53,11 @@ function CustomerHistory() {
       });
       setLoading(false);
       setCustomerOrders(response.data);
-      //console.log(response.data);
+      log("orders",response.data);
     } catch (err) {
       if (!err.response) {
         //setErrMsg("No Server Response");
-        console.log("Error in fetchCustomerOrders: " + err);
+        console.log("Error in fetchCustomerOrders: " );
       }
       setLoading(false);
     }
@@ -93,10 +94,17 @@ function CustomerHistory() {
     }
   };
   //                                  ------- fetch Ends    -------
+  //------------------------ Fnctions ----------------------------
+  const selectOrder = (order) => {
+    setCurrentOrder(order);
+    setShowOrderDetials(true);
+  };
   const logout = () => {
     localStorage.setItem("token", "");
     navigate("/login");
   };
+
+  //________________________________UI_________________________________________
   if (loading) {
     return <Loading />;
   }
@@ -146,6 +154,7 @@ function CustomerHistory() {
                   return (
                     <tr
                       key={id}
+                      onClick={() => selectOrder(order)}
                       // onClick={() => setCurrentOrder(order)}
                       // className={currentOrder.id === id ? "current-order" : ""}
                     >
@@ -234,59 +243,19 @@ function CustomerHistory() {
                   : "no list to view"}
               </tbody>
             </table>
-            <div className="details">
-              <h2>تفاصيل الطلبية الأخيرة</h2>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>م</th>
-                    <th>الصنف</th>
-                    <th>الكمية</th>
-                    <th>السعر</th>
-                    <th>المجموع</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {lastOrder.orderCart &&
-                    lastOrder.orderCart.map((item, index) => {
-                      const {
-                        id,
-                        // productId,
-                        productName,
-                        unitPrice,
-                        productAmount,
-                        packType,
-                      } = item;
-                      let sumOfRow = 0;
-                      sumOfRow = unitPrice * productAmount;
-                      sumOfRow = parseFloat(sumOfRow.toFixed(2));
-                      return (
-                        <tr key={id}>
-                          <td className="counter">
-                            <span id="counter"></span>
-                          </td>
-                          <td>{productName}</td>
-                          <td>{productAmount + " " + packType}</td>
-                          <td>
-                            {unitPrice}
-                            <span> شيقل</span>
-                          </td>
-                          <td>
-                            {sumOfRow}{" "}
-                            <i className="fa-solid fa-shekel-sign"></i>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
-              </table>
-            </div>
+            {showOrderDetails && (
+          <OrderDetailsCustomer 
+            currentOrder={currentOrder}
+            setShowOrderDetials={setShowOrderDetials}
+          />
+        )}
           </div>
         ) : (
           <p className="center"> "لا يوجد طلبيات في الانتظار"</p>
         )}
         <br></br>
         <br></br>
+       
         <br></br>
         <br></br>
         <br></br>

@@ -1827,6 +1827,9 @@ table th {
 .Signup-component .line {
   display: inline-block;
 }
+.Signup-component .btn--create {
+  cursor: pointer;
+}
 
 /*                      -------   Signup   ENDs-------- */
 /* -------------------------------    Register     ------------------------- */
@@ -1964,6 +1967,21 @@ cursor: pointer;
 }
 .admin-main-component button:hover{
   color: red;
+}
+.customer-history-details{
+  position: fixed;
+  /* padding: 20px; */
+  direction: rtl;
+  border: 2px solid rgb(42, 119, 6);
+  top: 80px;
+  left: 100px;
+  right: 100px;
+  /* bottom: 100px; */
+  /* min-height: 100%; */
+  height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
 }
 /* ===================================================================================================== */
 /*========================================== R E S P O S I V E  =======================================*/

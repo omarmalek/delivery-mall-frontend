@@ -17,7 +17,7 @@ const PWD_REGEX = /[a-zA-Z\u0621-\u064A0-9!@#$%*]{4,}$/;
 // const REGISTER_URL = "/localhost:8080/registerNewUser";
 
 const SignUp = () => {
-  const { customer, updateCusomerInfo, serverIP, serverPort } = useGlobalContext();
+  const { customer, updateCusomerInfo, center } = useGlobalContext();
   let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
@@ -63,7 +63,7 @@ const SignUp = () => {
   useEffect(() => {
     setErrMsg("");
   }, [customer.name, pwd, matchPwd]);
-
+//------------------------------- FUNCTIONS --------------------------
   const handleSubmit = async (e) => {
     e.preventDefault();
     // if button enabled with JS hack
@@ -75,7 +75,7 @@ const SignUp = () => {
     }
     try {
       const response = await axios.post(
-        `http://${serverIP}:${serverPort}/registerNewUser`,
+        `http://${center.serverIP}:${center.serverPort}/registerNewUser`,
         JSON.stringify({
           userName: customer.name,
           password: pwd,
@@ -108,7 +108,7 @@ const SignUp = () => {
       errRef.current.focus();
     }
   };
-
+//___________________________UI___________________________________________
   return (
     <div className="Signup-component">
       {success ? (
@@ -127,6 +127,7 @@ const SignUp = () => {
           >
             {errMsg}
           </p>
+          <h3>أنت في مركز تسوق: {center.name}</h3>
           <h1>إنشاء حساب</h1>
           <form onSubmit={handleSubmit}>
             <label htmlFor="phone-number">رقم الجوال :</label>
@@ -250,7 +251,7 @@ const SignUp = () => {
               Must match the first password input field.
             </p>
 
-            <button
+            <button className="btn--create"
               disabled={
                 !validName || !validPwd || !validMatch || !validPhoneNumber
                   ? true
