@@ -5,11 +5,11 @@ function Pagination({page, setPage}) {
   // const [page, setPage] = useState(1);
   //const { page, selectPage } = useGlobalContext();
 
-  const [pageListIcons, setPageListIcon] = useState([]);
+  const [pageListIcons, setPageListIcon] = useState([1, 2, 3, 4, 5]);
 //------------------------------Effect -------------------------------
   useEffect(() => {
-    if (page === "...") return;
-    if (page <= 3) {
+   if (page === "...") {};
+    if (page <= 4 ) {
       setPageListIcon([1, 2, 3, 4, 5]);
     }
     if (page > 4) {

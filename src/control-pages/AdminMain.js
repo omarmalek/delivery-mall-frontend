@@ -77,7 +77,7 @@ const AdminPage = () => {
     name: "",
     unitPrice: 1,
     backagePrice: "10",
-    packtype: "قطعة",
+    packType: "قطعة",
     numberOfPieces: "24",
     // img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgApfYP89rhTd9RRXzYKPgSQAPHL5jdmgs_MojTOxZGzOCCu4yZMSp84ytTYWxnEpSFw&usqp=CAU",
     img:"",

@@ -155,7 +155,7 @@ function CustomerHistory() {
                     <tr
                       key={id}
                       onClick={() => selectOrder(order)}
-                      // onClick={() => setCurrentOrder(order)}
+                     
                       // className={currentOrder.id === id ? "current-order" : ""}
                     >
                       <td className="counter">
@@ -214,7 +214,7 @@ function CustomerHistory() {
                       return (
                         <tr
                           key={id}
-                          // onClick={() => setCurrentOrder(order)}
+                          onClick={() => selectOrder(order)}
                           // className={currentOrder.id === id ? "current-order" : ""}
                         >
                           <td className="counter">

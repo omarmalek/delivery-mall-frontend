@@ -29,7 +29,21 @@ const OrderDetailsCustomer = ({ currentOrder, setShowOrderDetials }) => {
   } = currentOrder;
   return (
      <div className="customer-history-details">
-              <h2>تفاصيل الطلبية </h2>
+             
+      <div className="header">
+        <button
+          className="btn form-close"
+          onClick={() => {
+            setShowOrderDetials(false);
+          }}
+        >
+          <FaTimes />
+        </button>
+        <h1>تفاصيل الطلبية</h1>
+        {/* <i className="somelogo">
+          <span>number of new orders</span>
+        </i> */}
+      </div>
               <table className="table">
                 <thead>
                   <tr>
