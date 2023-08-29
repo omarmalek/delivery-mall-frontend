@@ -27,7 +27,7 @@ const getCustomerLocalInfo = () => {
 
 const AppProvider = ({ children }) => {
   //-----------------------------pre setup ----------------
-const baseServer = "127.0.0.1";
+const baseServer = "192.168.0.200";
 const baseServerPort = "8080";
 
 let startCenter = {
