@@ -4,6 +4,7 @@ import { faBars} from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/shopping-cart-bag-logo-260nw-small.png";
 import { useGlobalContext } from "../context";
 import { Link,useNavigate } from "react-router-dom";
+import './Header-Control.css'
 
 function HeaderControl() {
   const navigate = useNavigate();
