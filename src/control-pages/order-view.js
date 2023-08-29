@@ -31,27 +31,16 @@ const OrderView = ({ orders, role }) => {
             {orders
               ? orders.map((order) => {
                   const {
-                    //here we will take just the important info
                     id,
-                    // customerId,
-                    // orderSetterId,
-                    // deliveryManId,
-                    // delivaryCharge,
                     cartTotal,
                     date,
-                    // paymentType,
                     delivaryServiceType,
                     packed,
                     sentDelivery,
                     delivered,
-                    // paid,
                     cancelled,
                     rejected,
-                    // customerEvaluation,
-                    // controlNotes,
-                    customerName,
-                    //   customerPhone,
-                    //   customerAddress,
+                    customerName
                   } = order;
 
                   return (

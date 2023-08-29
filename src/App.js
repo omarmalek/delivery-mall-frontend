@@ -18,6 +18,7 @@ import AdminMain from "./control-pages/AdminMain";
 import Main from "./user-pages/Main";
 import AddCenter from "./control-pages/AddCenter";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -32,8 +33,8 @@ function App() {
 
         <Route exact path="/admins" element={<AdminsLogin />} />
 
-        <Route path="/admin">
-          <Route  path="main" element={<AdminMain />} />
+        <Route path="/admin" >
+          <Route  index element={<AdminMain />} />
           <Route  path="orders" element={<OrderControlPage />} />
           <Route  path="ordres-old" element={<OrderOldPage />} />
           <Route  path="addproduct" element={<AddProduct />} />;

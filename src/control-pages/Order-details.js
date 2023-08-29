@@ -155,7 +155,7 @@ const OrderDetails = ({ currentOrder, role, setShowOrderDetials }) => {
           </thead>
           <tbody>
             {currentOrder.orderCart
-              ? currentOrder.orderCart.map((item, index) => {
+              ? currentOrder.orderCart.map((item) => {
                   const {
                     id,
                     // productId,
