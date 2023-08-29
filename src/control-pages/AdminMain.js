@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import HeaderControl from "./Header-Control";
 import { useGlobalContext } from "../context";
-import { useState } from "react";
+// import { useState } from "react";
 import {tempPhotosList} from "../data"
 
 
@@ -47,7 +47,7 @@ const AdminPage = () => {
     try {
       const url = `http://${center.serverIP}:${center.serverPort}/product`;
       console.log(url);
-      const response = await axios.post(url, JSON.stringify(product), {
+      await axios.post(url, JSON.stringify(product), {
         headers: {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("admintoken"),

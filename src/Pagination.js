@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGlobalContext } from "./context";
+// import { useGlobalContext } from "./context";
 
 function Pagination({page, setPage}) {
   // const [page, setPage] = useState(1);

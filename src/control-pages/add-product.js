@@ -62,7 +62,7 @@ log("center port in -add product-",center.serverPort);
       try {
         const url = `http://${center.serverIP}:${center.serverPort}/productmedia`;
         console.log(url);
-        const response = await axios.post(url, formData, {
+        await axios.post(url, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: localStorage.getItem("admintoken"),

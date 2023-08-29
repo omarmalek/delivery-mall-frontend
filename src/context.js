@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { temp_catgories } from "./data";
-import { temp_full_catgories } from "./data";
+// import { temp_full_catgories } from "./data";
 
 const AppContext = React.createContext();
 
@@ -27,7 +27,7 @@ const getCustomerLocalInfo = () => {
 
 const AppProvider = ({ children }) => {
   //-----------------------------pre setup ----------------
-const baseServer = "192.168.0.200";
+const baseServer = "localhost";
 const baseServerPort = "8080";
 
 let startCenter = {

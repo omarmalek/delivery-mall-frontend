@@ -21,7 +21,7 @@ const startCenter = {
 function Center() {
   let navigate = useNavigate();
 
-  const {baseServer, baseServerPort, setCenter, setPage,setCurrentCatId} = useGlobalContext();
+  const {baseServer, baseServerPort, setCenter,setCurrentCatId} = useGlobalContext();
   const [centersList, setCentersList] = useState([startCenter,startCenter,startCenter]);//TODO: we will get prefaired center from local storage;
  const [loading, setLoading] = useState(true);
   //---------------------------- use Effect ----------------------

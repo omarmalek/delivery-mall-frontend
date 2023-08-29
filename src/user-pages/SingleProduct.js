@@ -1,7 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import noProductImg from "../images/no product image.png";
-import { AiOutlineCheck } from "react-icons/ai";
+// import { AiOutlineCheck } from "react-icons/ai";
 import { FaShekelSign, FaTimes } from "react-icons/fa";
 
 
