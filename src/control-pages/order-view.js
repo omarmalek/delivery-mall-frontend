@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../styles/Order-view.css';
 import OrderDetails from "./Order-details";
 
 const OrderView = ({ orders, role }) => {

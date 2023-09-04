@@ -46,14 +46,8 @@ if(localStorage.getItem("prefairedCenter")){
 }
   
   // ----------------------------   states     -------------------------------------
-  const [loading, setLoading] = useState(false);
-  
   const [center, setCenter] = useState( startCenter); //TODO: we will get prefaired center from local storage;
-  //log("this is runing from contex!")
   log("Center is",center.name)
-  
-  //const [serverIP, setServerIP] = useState(baseServer);
-  //const [serverPort, setServerPort] = useState(baseServerPort);
   log("Server Port is:", center.serverPort)
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [catgories, setCatgories] = useState(temp_catgories);
@@ -69,8 +63,7 @@ if(localStorage.getItem("prefairedCenter")){
   const [currentCatId, setCurrentCatId] = useState(1);
 
   // ===============================================   Effect     =================================
-  
-  
+ 
   useEffect(() => {
     fetchCatgories();
   }, [center]);
@@ -95,7 +88,6 @@ if(localStorage.getItem("prefairedCenter")){
     } catch (error) {
       console.log("Error in fetchCatgories: ");
       setCatgories(temp_catgories);
-      setLoading(false);
     }
   };
  
@@ -128,7 +120,7 @@ if(localStorage.getItem("prefairedCenter")){
     }
   };
 
-  //                                       ------- Fetch functions --------ends
+  //                                     ------- Fetch functions --------ends
   // ------------------------------------------- Functions -----------------------------
  
   const updateCusomerInfo = (event) => {
@@ -146,8 +138,6 @@ if(localStorage.getItem("prefairedCenter")){
     setCurrentCatId(catgoryId);
     setPage(1);
     setProductsAternativly(catgoryId);
-    setLoading(false);
-    
   };
   
   const openCart = () => {
@@ -235,9 +225,7 @@ if(localStorage.getItem("prefairedCenter")){
       exist: false,
     });
   };
-
-  //                                  -------------  Functions ---------Ends
-
+  //                              -------------  Functions ---------Ends
   // ------------------------------------------- Calculating Cart Functions ---------------------------
   const incProductQuantityInCart = (product) => {
     let newCart = cart.map((item) => {
@@ -316,10 +304,7 @@ if(localStorage.getItem("prefairedCenter")){
         baseServer,
         baseServerPort,
         center,
-        // serverIP,
-        // serverPort,
         setCenter,
-        loading,
         isCartOpen,
         openCart,
         closeCart,
@@ -363,5 +348,6 @@ export const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
-export { AppContext, AppProvider };
+//export { AppContext, AppProvider };
+export {AppProvider};
 //note: to send sms message to the customer by form

@@ -1,0 +1,131 @@
+.header-comp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 67px;
+    background: #fff;
+    padding: 0.7rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+    box-shadow: var(--box-shadow);
+    direction: rtl;
+  }
+  .header-comp .logo a {
+    /* border: 1px solid rgb(236, 7, 217); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header-comp .logo-name {
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    /* border: 1px solid red; */
+  }
+  
+  .header-comp .logo img {
+    width: 50px;
+    /* border: 1px solid red; */
+  }
+  
+  .header-comp .navbar a {
+    font-size: 1rem;
+    margin-right: 0.3rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1rem;
+    color: var(--light-color);
+  }
+  
+  .header-comp .navbar a.active,
+  .header-comp .navbar a:hover {
+    color: #fff;
+    background: var(--green);
+  }
+  
+  .header-comp .icons i,
+  .header-comp .icons a {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    width: 2.2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+    padding: 7px 15px;
+  }
+  
+  .header-comp .icons i:hover,
+  .header-comp .icons a:hover {
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+  }
+  
+  .header-comp .icons #menu-bars {
+    display: none;
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 1rem 1.3rem;
+  }
+  header .navbar a {
+    margin-right: 0.1rem;
+    /* font-size: 0.9rem; */
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  header .icons #menu-bars {
+    display: inline-block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* // for cut */
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    /* font-size: 2rem; */
+    background: #eee;
+  }
+  header #search-icon {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 550px) {
+ 
+}
+
+@media (max-width: 480px) {
+ 
+}

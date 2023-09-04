@@ -1,0 +1,49 @@
+.exhibition-component {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+    /* gap: 10px; */
+    padding-top: 10px;
+    margin-top: 130px;
+    /* border: 1px solid red; */
+  }
+  .exhibition-component h2{
+    margin-top: 50px;
+    text-align: right;
+  }
+  .check-order{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    margin: 15px;
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+  .exhibition-component {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+  .exhibition-component {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .exhibition-component {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+}

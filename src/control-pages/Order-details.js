@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Order-details.css'
 import { useGlobalContext } from "../context";
 import { FaTimes } from "react-icons/fa";
 

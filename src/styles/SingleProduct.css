@@ -1,0 +1,240 @@
+.single-product-short {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px 5px 10px;
+    padding: 0.3rem;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: 0.7rem;
+    background: #fff;
+      /* border: 1px solid rgb(4, 129, 42); */
+  }
+  .single-product-short .photo-and-basic {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid var(--light-green);
+  }
+  .single-product-short .photo-and-basic.choosen {
+    /* border: 1px solid rgb(4, 129, 42); */
+    /* background-color: rgb(241, 133, 174); */
+  }
+  .single-product-short .img-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    margin-left: 5px;
+    background-color: #fff;
+    /* margin: auto; */
+    /* border: 1px solid var(--clr-grey-9); */
+  }
+  .single-product-short .img-container img {
+    width: 100%;
+    object-fit: cover;
+    /* border: 1px solid var(--clr-grey-9); */
+  }
+  /* .single-product-short .img-container .fa-award {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    font-size: 1rem;
+    color: var(--green);
+  } */
+  .single-product-short .product-details {
+    display: flex;
+  
+    /* border: 1px solid red; */
+  }
+  .single-product-short .product-details .info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    direction: rtl;
+    width: 70%;
+    /* border-right: 5px solid var(--clr-grey-9); */
+    /* border: 1px solid rgb(26, 189, 230); */
+  }
+  .single-product-short .product-details .info.incart {
+    background: rgba(0, 100, 0, 0.5);
+  }
+  .single-product-short .info--name {
+    font-family: "El Messiri", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+  .single-product-short .info--price {
+    color: maroon;
+    font-size: 1.4rem;
+  }
+  .single-product-short .info--price i{
+    font-size: 1rem;
+  }
+  .single-product-short .info--weight {
+    font-weight: 400;
+    color: darkolivegreen;
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-size: 0.9rem;
+  }
+  .single-product-short .extra-details-btn {
+    padding: 3px 15px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    color: rgb(46, 73, 30);
+    background: LightGray;
+  }
+  .single-product-short .extra-details-btn:hover {
+    color: var(--green);
+    /* background: var(--clr-grey-5); */
+  }
+  .single-product-short .control {
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid greenyellow; */
+  }
+  .single-product-short .control > button {
+    background-color: var(--green);
+    width: 100%;
+    height: 3rem;
+    /* line-height: 1rem; */
+    margin: 0 0 0.1rem 0;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  .single-product-short .control > button:hover {
+    background-color: lightgreen;
+    color: var(--green);
+  }
+  .single-product-short .control > button.gone {
+    display: none;
+  }
+  .single-product-short .control > button.cancel {
+    /* margin-top: 0.5rem; */
+    color: red;
+    background-color: #fff;
+    border: 1px solid red;
+    transition: var(--transition);
+  }
+  .single-product-short .control .under-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+  }
+  .single-product-short .control .under-btn button {
+    width: 32%;
+    font-size: 2em;
+    padding: 3px;
+    border: 1px solid var(--green);
+    /* text-align: center; */
+  }
+  .single-product-short .control .under-btn button:first-child {
+    border-radius: 15px 0 0 15px;
+    color: red;
+  }
+  .single-product-short .control .under-btn button:last-child {
+    border-radius: 0 15px 15px 0;
+    color: rgb(9, 128, 34);
+  }
+  .single-product-short .control .under-btn input {
+    width: 35%;
+    font-size: 2em;
+    padding: 3px;
+    text-align: center;
+    border-top: 1px solid var(--green);
+    border-bottom: 1px solid var(--green);
+  }
+  .single-product-short .info-secondary {
+    position: absolute;
+    /* display: none; */
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--green);
+    direction: rtl;
+    background-color: #fff;
+    z-index: -1;
+  }
+  .single-product-short .show-info-secondary {
+    z-index: 3;
+  }
+  .single-product-short .close-info-secondary {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: red;
+    background: transparent;
+    font-size: 1.7rem;
+  }
+  .single-product-short .info--company {
+    font-family: "dubai-bold", sans-serif;
+  }
+  .single-product-short .info--country {
+    font-weight: 400;
+    /* border-bottom: 1px dashed var(--subtle); */
+  }
+  .single-product-short .info--desc {
+    font-family: "sky-bold", serif;
+    /* color: ; */
+    font-size: 0.8rem;
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+  .single-product-short .img-container img {
+    width: 80%;
+  }
+  .single-product-short .img-container {
+    height: 190px;
+  }
+}
+
+@media (max-width: 550px) {
+  .single-product-short .img-container {
+    height: 170px;
+  }
+  .single-product-short .img-container img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-product-short {
+    margin: 0;
+  }
+  .single-product-short .photo-and-basic {
+    border: none;
+    border-bottom: 1px solid var(--green);
+  }
+  .single-product-short .img-container {
+    height: 140px;
+  }
+  .single-product-short .img-container img {
+    width: 100%;
+  }
+}

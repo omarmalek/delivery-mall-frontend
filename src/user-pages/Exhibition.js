@@ -1,4 +1,5 @@
 import React ,{useState, useEffect} from "react";
+import '../styles/Exhibition.css'
 import { useGlobalContext } from "../context";
 import Loading from "../Loading";
 import Pagination from "../Pagination";

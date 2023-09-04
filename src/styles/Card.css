@@ -1,0 +1,189 @@
+.cart {
+    /* box-sizing: border-box; */
+    position: fixed;
+    top: 4.2rem;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    padding-bottom: 100px;
+    border: 2px solid var(--green);
+    background: var(--clr-white);
+    box-shadow: var(--clr-red-dark);
+    transition: var(--transition);
+    transform: translate(-110%);
+    z-index: 4;
+    min-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 2px solid var(--green);
+  }
+  .cart-close {
+    font-size: 1.75rem;
+    background: transparent;
+    border-color: transparent;
+    color: var(--clr-primary-5);
+    cursor: pointer;
+    color: var(--clr-red-dark);
+    margin-top: 0.2rem;
+  }
+  .cart-close:hover {
+    color: var(--clr-red-light);
+  }
+  .cart-logo {
+    position: relative;
+    font-size: 2rem;
+    color: var(--green);
+  }
+  .cart-logo span {
+    position: absolute;
+    top: -0.5rem;
+    left: 40%;
+    color: blue;
+    font-size: 1.3rem;
+  }
+  
+  .show-cart {
+    transform: translate(0);
+  }
+  /* temp table css  */
+  .cart table {
+    direction: rtl;
+    border-collapse: collapse;
+    border: 1px solid var(--style);
+    width: 100%;
+    counter-reset: items_counter;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .cart table td,
+  table th {
+    border-bottom: 1px solid gray;
+    padding: 3px;
+  }
+  .cart table th {
+    padding-top: 0.5rem;
+    text-align: right;
+    background-color: var(--style);
+    color: var(--mainFont);
+    position: sticky;
+    top: 0;
+  }
+  .cart table th.amount-caption {
+    text-align: center;
+    /* border: 1px solid red; */
+  }
+  .cart #counter:before {
+    counter-increment: items_counter;
+    content: counter(items_counter) ". ";
+  }
+  .cart table button {
+    width: 100%;
+    color: red;
+    font-weight: 700;
+    font-size: 16px;
+    border: 1px solid rgba(255, 0, 0, 0.404);
+    border-radius: 3px;
+  }
+  .cart table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  .cart table tr:hover {
+    background-color: #ddd;
+  }
+  /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+  .cart table .amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    /* padding: 1px; */
+  }
+  .cart table .amount button {
+    width: 3rem;
+    padding: 3px;
+    border: 1px solid var(--green);
+  }
+  .cart table .amount button:first-child {
+    border-radius: 0 15px 15px 0;
+    color: red;
+  }
+  .cart table .amount button:last-child {
+    border-radius: 15px 0 0 15px;
+    color: rgb(9, 128, 34);
+  }
+  .cart table .amount input {
+    width: 4rem;
+    padding: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid var(--green);
+    border-bottom: 1px solid var(--green);
+  }
+  /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+  .cart .cart-summary {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+    direction: rtl;
+  }
+  .cart .cart-summary span {
+    font-size: 1.4rem;
+    margin-left: 0.5rem;
+  }
+  .cart .cart-summary input {
+    width: 4rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--green);
+    text-align: center;
+  }
+  .cart #empty-cart {
+    /* :link, :visited { */
+    background-color: var(--style);
+    color: var(--mainFont);
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 15px;
+    border: 1px solid var(--green);
+  }
+  .cart #empty-cart:hover {
+    background-color: var(--mainFont);
+    color: var(--style);
+    border: 1px solid var(--green);
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+  .cart {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+ 
+}
+
+@media (max-width: 480px) {
+  .cart table .amount input {
+    font-size: 1rem;
+    padding-top: 5px;
+  }
+}

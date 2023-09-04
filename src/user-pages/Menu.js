@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Menu.css'
 import { useGlobalContext } from "../context";
 import {FaCartArrowDown} from "react-icons/fa"
 // import cartLogo from "../images/red-simple-shopping-cart-icon-12.png";

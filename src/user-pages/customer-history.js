@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../styles/customer-history.css'
 import axios from "axios";
 import Header from "./Header";
 import Loading from "../Loading";

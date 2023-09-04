@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import '../styles/AdminMain.css'
 import HeaderControl from "./Header-Control";
 import { useGlobalContext } from "../context";
 // import { useState } from "react";
@@ -115,9 +116,14 @@ const AdminPage = () => {
   return (
     <div>
       <HeaderControl />
+      <br></br>
+      <br></br>
+      <br></br>
+      <div>
+        <h4 style={{textAlign:"center",margin:"15px"}}>  مركز التسوق :   {center.name}</h4>
+      </div>
       <section className="admin-main-component">
-        <br></br>
-        <br></br>
+
         <h1>AdminPage</h1>
         <Link to="/admin/orders">Orders</Link>
         <br></br>
@@ -127,8 +133,12 @@ const AdminPage = () => {
         <br></br>
         <Link to="/admin/searchresult">search</Link>
         <br></br>
-         <Link to="/admin/addCatgory">Add New Catgory</Link> {/*//TODO: in schedual */}
+        <Link to="#">Add New Catgory</Link> {/*//TODO: in schedual => "/admin/addCatgory"*/}
          <div>
+        <Link to="/set">موظف التجهيز</Link>
+        <br></br>
+        <Link to="/dv">موظف الديليفري</Link>
+        <br></br>
         <button onClick={addFakeProducts}>Add Fake Products</button>
        
         

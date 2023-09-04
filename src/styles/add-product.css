@@ -1,0 +1,90 @@
+.add-product-component {
+    margin: 20px auto;
+    width: 80%;
+  /* border: 2px solid red; */
+    direction: rtl;
+  }
+  .add-product-component h1 {
+    text-align: center;
+  }
+  .add-product-component .row {
+    margin: 0 10% 15px;
+    display: flex;
+    
+    justify-content: space-between;
+    /* border: 2px solid green; */
+  }
+  .add-product-component .row .form-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 2px solid rgb(25, 97, 230); */
+    margin-left: 20px;
+  }
+  .add-product-component .row .id {
+    width: 150px;
+  }
+  .add-product-component .row .id input {
+    background-color: rgb(66, 66, 70);
+    color: #fff;
+  }
+  .add-product-component label {
+  }
+  .add-product-component input {
+    padding-right: 10px;
+    /* width: 100%; */
+    border: 1px solid rgb(66, 66, 70);
+    background-color: #ddd;
+    font-size: 1.2rem;
+  }
+  .add-product-component .select-class {
+    padding-right: 10px;
+    width: 80%;
+    border: 1px solid rgb(66, 66, 70);
+    background-color: #ddd;
+    font-size: 1.2rem;
+  }
+  .add-product-component .control-btns {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .add-product-component button {
+    margin-left: 20px;
+    /* width: 100px; */
+    padding: 10px 20px;
+    background-color: #27ae60;
+    text-align: center;
+    cursor: pointer;
+  }
+  .add-product-component button:hover {
+    background-color: #76eea8;
+  }
+  
+/* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+  .add-product-component{
+    width: 100%;
+  }
+  .add-product-component .row {
+  flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 550px) {
+ 
+}
+
+@media (max-width: 480px) {
+ 
+}

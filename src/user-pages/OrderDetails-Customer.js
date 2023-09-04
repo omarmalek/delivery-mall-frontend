@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/OrderDetails-Customer.css'
 // import { useGlobalContext } from "../context";
 import { FaTimes } from "react-icons/fa";
 
@@ -27,6 +28,7 @@ const OrderDetailsCustomer = ({ currentOrder, setShowOrderDetials }) => {
     // customerPhone,
     // customerAddress,
   // } = currentOrder;
+  //______________________________________UI_________________________________
   return (
      <div className="customer-history-details">
              

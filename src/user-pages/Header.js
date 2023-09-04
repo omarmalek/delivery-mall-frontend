@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import '../styles/Header.css'
 import logo from "../images/shopping-cart-bag-logo-260nw-small.png";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
@@ -15,9 +16,9 @@ function Header() {
   const navbarRef = useRef(null);
 
   return (
-    <header>
+    <div className="header-comp">
       <div className="logo">
-        <Link to="/main" className="logo-name">
+        <Link to="/admins" className="logo-name">
           <img src={logo} alt="logo" />
            ديليفري مول
         </Link>
@@ -31,7 +32,7 @@ function Header() {
         
         <Link to="#">أسعار التوصيل</Link>
         <Link to={`/customerhistory`}> الطلبات السابقة</Link>
-        <Link to="/admins"> Testing</Link>
+       
       </div>
       <div className="icons">
         <i className="fa fa-bars" id="menu-bars" onClick={toggleNavbar}>
@@ -47,7 +48,7 @@ function Header() {
         <Link to="#" className="fas fa-heart"><FaHeart /></Link>
         <Link to="/login" className="fa-solid fa-user"><FaUserAlt/></Link>
       </div>
-    </header>
+    </div>
   );
 }
 

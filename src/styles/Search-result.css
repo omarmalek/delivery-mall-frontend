@@ -1,0 +1,38 @@
+.search-result-component {
+    padding: 20px;
+    margin-top: 80px;
+    direction: rtl;
+    min-height: 80vh;
+  }
+  .search-result-component .search-bar {
+    display: flex;
+  }
+  .search-result-component .input-search {
+    border: 1px solid rgb(59, 59, 77);
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 5px 7px;
+    width: 400px;
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+ 
+}
+
+@media (max-width: 550px) {
+ 
+}
+
+@media (max-width: 480px) {
+ 
+}

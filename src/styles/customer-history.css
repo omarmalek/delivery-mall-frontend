@@ -1,0 +1,160 @@
+.customer-history-component {
+    margin: 20px 15%;
+    transition: none;
+    padding: 10px;
+    /* border: 4px solid red; */
+  
+    border-collapse: collapse;
+  }
+  .customer-history-component h1 {
+    text-align: right;
+  }
+  .customer-history-component h2,
+  h3 {
+    text-align: center;
+  }
+  .customer-history-component table {
+    direction: rtl;
+    /* border: 1px solid red; */
+    border-collapse: collapse;
+    border: 1px solid var(--style);
+    width: 100%;
+    counter-reset: items_counter;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+  }
+  .customer-history-component .current-order {
+    background-color: #27ae60;
+  }
+  .customer-history-component td,
+  table th {
+    border-bottom: 1px solid gray;
+    padding: 3px;
+  }
+  
+  .customer-history-component th {
+    padding-top: 0.5rem;
+    text-align: right;
+    background-color: var(--style);
+    color: var(--mainFont);
+    position: sticky;
+    top: 0;
+  }
+  .order-view-component #counter:before {
+    counter-increment: items_counter;
+    content: counter(items_counter) ". ";
+  }
+  .customer-history-component tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .customer-history-component tr:hover {
+    background-color: #27ae60;
+  }
+  .customer-history-component tr:nth-child(odd).current-order {
+    background-color: #27ae60;
+  }
+  .customer-history-component .selected {
+    background-color: #e27e0c;
+  }
+  .customer-history-component .details h1 {
+    text-align: center;
+  }
+  .customer-history-component .details table {
+    direction: rtl;
+    border-collapse: collapse;
+    border: 1px solid var(--style);
+    width: 80%;
+    margin: 0 auto;
+    counter-reset: items_counter2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .customer-history-component .details table td,
+  table th {
+    border-bottom: 1px solid gray;
+    padding: 3px;
+  }
+  .customer-history-component .details table th {
+    padding-top: 0.5rem;
+    text-align: right;
+    background-color: var(--style);
+    color: var(--mainFont);
+    position: sticky;
+    top: 0;
+  }
+  /* .customer-history-component .details table th.amount-caption {
+    text-align: center;
+    /* border: 1px solid red; 
+  } */
+  .customer-history-component .details #counter:before {
+    counter-increment: items_counter2;
+    content: counter(items_counter2) ". ";
+  }
+  
+  .customer-history-component .details table button {
+    width: 100%;
+    color: red;
+    font-weight: 700;
+    font-size: 16px;
+    border: 1px solid rgba(255, 0, 0, 0.404);
+    border-radius: 3px;
+  }
+  .customer-history-component .details table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .customer-history-component .details table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .customer-history-component .details table .amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    /* padding: 1px; */
+  }
+  
+  .customer-history-component .details table .amount button {
+    width: 3rem;
+    padding: 3px;
+    border: 1px solid var(--green);
+  }
+  .customer-history-component .details table .amount button:first-child {
+    border-radius: 0 15px 15px 0;
+    color: red;
+  }
+  .customer-history-component .details table .amount button:last-child {
+    border-radius: 15px 0 0 15px;
+    color: rgb(9, 128, 34);
+  }
+  .customer-history-component .details table .amount input {
+    width: 4rem;
+    padding: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid var(--green);
+    border-bottom: 1px solid var(--green);
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+ 
+}
+
+@media (max-width: 550px) {
+ 
+}
+
+@media (max-width: 480px) {
+ 
+}

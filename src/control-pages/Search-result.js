@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import  '../styles/Search-result.css'
 import Alert from "../Alert";
 import ExhibitionUpdateDelete from "./Exhibition-update-delete";
 import HeaderControl from "./Header-Control";

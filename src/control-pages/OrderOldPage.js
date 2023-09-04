@@ -1,5 +1,5 @@
 import React from "react";
-import OrderView from "./order-view";
+import OrderView from "./Order-view";
 import { useEffect, useState } from "react";
 import Loading from "../Loading";
 import ServerError from "../ServerError";

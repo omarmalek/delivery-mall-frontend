@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 import HeaderControl from "./Header-Control";
 import { useNavigate } from "react-router-dom";
+import CssStyle from './AddCenter.modules.css'
 
 const tempCenter = {
   id: 0,
@@ -93,7 +94,7 @@ function AddCenter() {
         <br></br>
         <br></br>
 
-        <h1>اضافة مركز تسوق</h1>
+        <h1 className={CssStyle.h1}>اضافة مركز تسوق</h1>
         <form>
          
           <div className="row">

@@ -1,0 +1,36 @@
+.ExhibitionUpdateDelete-component {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+    /* gap: 10px; */
+    padding-top: 10px;
+    margin-top: 20px;
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+  .ExhibitionUpdateDelete-component {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+ 
+}
+
+@media (max-width: 550px) {
+  .ExhibitionUpdateDelete-component {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+}

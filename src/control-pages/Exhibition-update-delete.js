@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Exhibition-update-delete.css'
 import SingleProductShortUpdateDelete from "./SingleProductShort-update-delete";
 
 // import stlyle from "./styles/";

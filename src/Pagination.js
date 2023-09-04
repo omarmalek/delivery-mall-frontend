@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './styles/Pagination.css'
 // import { useGlobalContext } from "./context";
 
 function Pagination({page, setPage}) {

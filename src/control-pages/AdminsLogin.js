@@ -26,7 +26,7 @@ const Login = () => {
    
     if (roleName) {
       if (roleName === "Admin") {
-        navigate(`/admin/main`);
+        navigate(`/admin`);
       }
       if (roleName === "Setter") {
         navigate(`/set`);

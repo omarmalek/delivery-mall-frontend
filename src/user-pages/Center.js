@@ -1,4 +1,5 @@
 import React ,{useState, useEffect} from "react";
+import '../styles/Center.css'
 import { useNavigate } from "react-router-dom";
 // import center_logo from "../images/center-logo.png"
 import { useGlobalContext } from "../context";
