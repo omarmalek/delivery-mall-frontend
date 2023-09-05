@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/Card.css'
+import '../styles/Cart.css'
 import { useGlobalContext } from "../context";
 import { FaTimes,FaShekelSign,FaCartArrowDown} from "react-icons/fa";
 import CustomerInfo from "./CustomerInfo";

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 import HeaderControl from "./Header-Control";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const tempProduc = {
   id: 0,
@@ -50,12 +50,12 @@ log("center port in -add product-",center.serverPort);
   };
   const updateProductImage = (event) => {
     setImgesFiles(event.target.files[0]); 
-    {/* for mutipel photos :...
+    /* for mutipel photos :...
     const imgArray = event.target.files;
     for (var i = 0; i < imgArray.length; i++) {
       formData.append("imgesFile", file[i].file, file[i].name);
     }
-  setImgesFile(imgArray);*/}
+  setImgesFile(imgArray);*/
   };
   const clearFields = (event) =>{
     //event.preventDefault;

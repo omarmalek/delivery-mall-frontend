@@ -95,8 +95,8 @@ html {
 }
 body {
   /* min-height: 100vh; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 section {
@@ -106,10 +106,10 @@ section {
 section:nth-child(even) {
   background: #eee;
 }
-.page-title {
+/* .page-title {
   text-align: center;
   margin-top: 70px;
-}
+} */
 .sub-heading {
   text-align: center;
   color: var(--green);

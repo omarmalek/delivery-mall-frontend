@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGlobalContext } from "../context";
+import HeaderControl from './Header-Control';
 
 const Login = () => {
   let navigate = useNavigate();
@@ -85,8 +86,10 @@ const Login = () => {
       }
     }
   };
+  //__________________________UI__________________________________________
   return (
     <div>
+      <HeaderControl />
       <br></br>
       <div className="Signup-component">
         <section>

@@ -1,17 +1,16 @@
 .exhibition-component {
     display: grid;
-    grid-template-columns: auto auto auto;
-    /* display: flex;
-    justify-content: center;
-    flex-wrap: wrap; */
-    /* gap: 10px; */
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    
     padding-top: 10px;
     margin-top: 130px;
     /* border: 1px solid red; */
+    /* height: 100vh; */
   }
   .exhibition-component h2{
     margin-top: 50px;
-    text-align: right;
+    text-align: center;
   }
   .check-order{
     margin-top: 50px;

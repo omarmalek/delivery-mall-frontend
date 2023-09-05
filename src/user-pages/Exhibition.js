@@ -61,8 +61,8 @@ function Exhibition() {
           productsOfCurrentCatgory.map((product, index) => {
             return <SingleProduct key={product.id} product={product} />;
           }
-        )) : 
-          <h2>لا يوجد بيانات لعرضها</h2>
+        )) :<><div attrib="to deseive grid system :)"></div> 
+          <h2 >لا يوجد بيانات لعرضها</h2></> 
         }
       </div>
       {productsOfCurrentCatgory[0] && <Pagination page={page} setPage={setPage}/> }

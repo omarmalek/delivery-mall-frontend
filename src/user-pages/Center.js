@@ -82,6 +82,7 @@ function Center() {
         })
         }
         </div>
+        
         )
 }
 export default Center;

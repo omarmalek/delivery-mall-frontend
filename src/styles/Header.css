@@ -1,4 +1,5 @@
 .header-comp {
+    transition: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,27 +14,28 @@
     box-shadow: var(--box-shadow);
     direction: rtl;
   }
-  .header-comp .logo a {
+  .header-comp .logo  {
     /* border: 1px solid rgb(236, 7, 217); */
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+  .header-comp .logo img {
+    width: 50px;
+  }
   .header-comp .logo-name {
     color: var(--black);
     font-size: 1.5rem;
     font-weight: bolder;
+    margin-top: -0.4rem
+  }
+  .header-comp .navbar{
+    font-size: 1.3rem;
+  
     /* border: 1px solid red; */
   }
-  
-  .header-comp .logo img {
-    width: 50px;
-    /* border: 1px solid red; */
-  }
-  
   .header-comp .navbar a {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-right: 0.3rem;
     border-radius: 0.5rem;
     padding: 0.3rem 1rem;
@@ -79,10 +81,10 @@
 }
 
 @media (max-width: 991px) {
-  header {
+  .header-comp {
     padding: 1rem 1.3rem;
   }
-  header .navbar a {
+  .header-comp .navbar a {
     margin-right: 0.1rem;
     /* font-size: 0.9rem; */
     font-size: 80%;
@@ -90,11 +92,13 @@
 }
 
 @media (max-width: 768px) {
-  header .icons #menu-bars {
-    display: inline-block;
+  
+  .header-comp .icons #menu-bars {
+    display: inline-table;
+    padding: 4px 14px;
   }
 
-  header .navbar {
+  .header-comp .navbar {
     position: absolute;
     top: 100%;
     left: 0;
@@ -102,23 +106,25 @@
     background: #fff;
     border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* // for cut */
+    padding: 0.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* for cut */
+    
   }
 
-  header .navbar.active {
+  .header-comp .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
-  header .navbar a {
+  .header-comp .navbar a {
     display: block;
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem;
     /* font-size: 2rem; */
     background: #eee;
   }
-  header #search-icon {
-    display: inline-block;
+  .header-comp #search-icon {
+    /* display: inline-block; */
+    
   }
 }
 
