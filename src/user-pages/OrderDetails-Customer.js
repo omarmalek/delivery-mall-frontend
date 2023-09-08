@@ -1,32 +1,34 @@
 import React from "react";
-import { useGlobalContext } from "../context";
+import '../styles/OrderDetails-Customer.css'
+// import { useGlobalContext } from "../context";
 import { FaTimes } from "react-icons/fa";
 
 const OrderDetailsCustomer = ({ currentOrder, setShowOrderDetials }) => {
-  const { updateOrder } = useGlobalContext();
+  // const { updateOrder } = useGlobalContext();
   
-  const {
-    id,
+  // const {
+    // id,
     // customerId,
     // orderSetterId,
     // deliveryManId,
     // delivaryCharge,
-    cartTotal,
-    date,
+    // cartTotal,
+    // date,
     // paymentType,
-    delivaryServiceType,
-    packed,
-    sentDelivery,
-    delivered,
+    // delivaryServiceType,
+    // packed,
+    // sentDelivery,
+    // delivered,
     // paid,
-    cancelled,
-    rejected,
+    // cancelled,
+    // rejected,
     // customerEvaluation,
     // controlNotes,
-    customerName,
-    customerPhone,
-    customerAddress,
-  } = currentOrder;
+    // customerName,
+    // customerPhone,
+    // customerAddress,
+  // } = currentOrder;
+  //______________________________________UI_________________________________
   return (
      <div className="customer-history-details">
              

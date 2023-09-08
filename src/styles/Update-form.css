@@ -1,0 +1,105 @@
+.update-form-component {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    background-color: rgb(235, 229, 229);
+    border: 2px solid #27ae60;
+    z-index: 5;
+    direction: rtl;
+  }
+  .update-form-component .form-close {
+    float: left;
+    margin: 5px;
+    background-color: #e27e0c;
+    width: 80px;
+  }
+  
+  .update-form-component h1 {
+    text-align: center;
+  }
+  .update-form-component .row {
+    margin: 0 10px 15px;
+    display: flex;
+    justify-content: right;
+    /* border: 2px solid red; */
+  }
+  .update-form-component .row .form-item {
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+    /* border: 2px solid rgb(25, 97, 230); */
+    margin-left: 10px;
+  }
+  .update-form-component .row .id {
+    width: 200px;
+  }
+  .update-form-component .row .id input {
+    background-color: rgb(66, 66, 70);
+    color: #fff;
+    padding: 3px 5px;
+  }
+  .update-form-component label {
+    font-size: 1rem;
+    width: 170px;
+  }
+  .update-form-component .text-input {
+    padding-right: 10px;
+    width: 100%;
+    border: 1px solid rgb(66, 66, 70);
+    background-color: #ddd;
+    font-size: 1rem;
+  }
+  .update-form-component .select-class {
+    padding-right: 10px;
+    width: 80%;
+    border: 1px solid rgb(66, 66, 70);
+    background-color: #ddd;
+    font-size: 1rem;
+  }
+  .update-form-component .control-btns {
+    width: 200px;
+    margin: 10px auto;
+  
+    /* border: 2px solid rgb(4, 122, 219); */
+    text-align: center;
+  }
+  /* .update-form-component .control-btns .check-update-ui {
+    padding: 5px 7px;
+    border: 2px solid red;
+  } */
+  /* .update-form-component .control-btns .check-update-ui > input {
+    margin: 5px 10px;
+  }
+  .update-form-component .control-btns .check-update-ui > label {
+    margin-top: 0px;
+  } */
+  .update-form-component .btn--update {
+    margin-left: 20px;
+    width: 100px;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    text-align: center;
+  }
+  /* ===================================================================================================== */
+/*========================================== R E S P O S I V E  =======================================*/
+
+@media (max-width: 1100px) {
+ 
+}
+
+@media (max-width: 991px) {
+ 
+}
+
+@media (max-width: 768px) {
+ 
+}
+
+@media (max-width: 550px) {
+ 
+}
+
+@media (max-width: 480px) {
+ 
+}

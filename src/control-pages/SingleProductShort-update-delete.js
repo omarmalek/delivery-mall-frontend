@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../styles/SingleProductShort-update-delete.css'
 import { useGlobalContext } from "../context";
 import noProductImg from "../images/no product image.png";
 // import { AiOutlineCheck } from "react-icons/ai";

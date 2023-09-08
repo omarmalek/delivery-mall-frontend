@@ -1,13 +1,17 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars} from "@fortawesome/free-solid-svg-icons";
+import  '../styles/Header-Control.css'
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faBars} from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/shopping-cart-bag-logo-260nw-small.png";
+// import {FaSearch, FaBars, FaHeart, FaUserAlt} from "react-icons/fa"
 import { useGlobalContext } from "../context";
 import { Link,useNavigate } from "react-router-dom";
 
+
 function HeaderControl() {
   const navigate = useNavigate();
-  const { showSearchBar, toggleNavbar, showNvbar,center } = useGlobalContext();
+  const { showNvbar } = useGlobalContext();
+  // const { showSearchBar, toggleNavbar, showNvbar,center } = useGlobalContext();
 
   // const linksContainerRef = useRef(null);
   // const navbarRef = useRef(null);
@@ -15,35 +19,33 @@ function HeaderControl() {
     localStorage.setItem("admintoken", "");
     navigate("/admins");
   };
+  //____________________________UI__________________________________-
   return (
-    <header>
+    <div className="header-control-comp">
       <div className="logo">
         <Link to="/" className="logo-name">
           <img src={logo} alt="" />
-          غزة ديليفري
+           ديليفري مول 
         </Link>
       </div>
-      <div>
-        <h4>  مركز التسوق :   {center.name}</h4>
-      </div>
+     
       <div className={showNvbar ? "navbar active" : "navbar"}>
         <Link to="/admins">ادارة التطبيق</Link>
-        {/* <Link to="/set">موظف التجهيز</Link> */}
-        {/* <Link to="/dv">موظف الديليفري</Link> */}
+     
       </div>
-      <div className="icons">
+      {/* <div className="icons">
         <i className="fa fa-bars" id="menu-bars" onClick={toggleNavbar}>
         <FontAwesomeIcon icon={faBars}></FontAwesomeIcon> </i>
-        <i className="fa fa-search" id="search-icon" onClick={showSearchBar}></i>
-        <Link to="#" className="fas fa-heart"></Link>
-        <i className="fa-solid fa-user"></i>
-      </div>
+        <i className="fa fa-search" id="search-icon" onClick={showSearchBar}><FaSearch/></i>
+       
+        <i className="fa-solid fa-user"><FaUserAlt/></i>
+      </div> */}
       <div className="logout">
           <button type="button" onClick={logout}>
             تسجيل الخروج
           </button>
         </div>
-    </header>
+    </div>
   );
 }
 

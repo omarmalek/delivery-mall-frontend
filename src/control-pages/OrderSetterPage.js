@@ -1,11 +1,12 @@
 import React from "react";
-import OrderView from "./order-view";
+import OrderView from "./Order-view";
 import { useEffect, useState } from "react";
 import Loading from "../Loading";
 import PaginationControl from "./PaginationControl";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGlobalContext } from "../context";
+import HeaderControl  from "./Header-Control"
 
 export default function OrderSetterPage() {
   const navigate = useNavigate();
@@ -67,12 +68,16 @@ export default function OrderSetterPage() {
   const role = "setter";
   return (
     <div>
+      <HeaderControl />
+      <br></br>
+      <br></br>
+      <br></br>
       <h1 className="page-title">موظف التجهيز</h1>
-      <div className="logout">
+      {/* <div className="logout">
         <button type="button" onClick={logout}>
           تسجيل الخروج
         </button>
-      </div>
+      </div> */}
       <OrderView orders={setterOrders} role={role} />
       <PaginationControl page={page} selectPage={selectPage} />
     </div>

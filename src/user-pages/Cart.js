@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Cart.css'
 import { useGlobalContext } from "../context";
 import { FaTimes,FaShekelSign,FaCartArrowDown} from "react-icons/fa";
 import CustomerInfo from "./CustomerInfo";

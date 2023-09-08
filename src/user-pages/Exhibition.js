@@ -1,4 +1,5 @@
 import React ,{useState, useEffect} from "react";
+import '../styles/Exhibition.css'
 import { useGlobalContext } from "../context";
 import Loading from "../Loading";
 import Pagination from "../Pagination";
@@ -60,8 +61,8 @@ function Exhibition() {
           productsOfCurrentCatgory.map((product, index) => {
             return <SingleProduct key={product.id} product={product} />;
           }
-        )) : 
-          <h2>لا يوجد بيانات لعرضها</h2>
+        )) :<><div attrib="to deseive grid system :)"></div> 
+          <h2 >لا يوجد بيانات لعرضها</h2></> 
         }
       </div>
       {productsOfCurrentCatgory[0] && <Pagination page={page} setPage={setPage}/> }

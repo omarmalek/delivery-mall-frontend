@@ -1,8 +1,10 @@
 import axios from "axios";
+import '../styles/add-product.css'
 import React, { useState } from "react";
 import { useGlobalContext } from "../context";
 import HeaderControl from "./Header-Control";
 import { useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
 
 const tempProduc = {
   id: 0,
@@ -26,12 +28,18 @@ const tempProduc = {
   dateOfExpery: "",
   periodOfValidity: "",
 };
+//-------------------------- State Hook -------------------------------
 function AddProduct() {
   let navigate = useNavigate();
   const { catgories, center, log} = useGlobalContext();
   const [imgesFiles, setImgesFiles] = useState("");
   const [product, setProduct] = useState(tempProduc);
+  const [msg, setMsg] = useState({text:"",color:""})
+  const [showMsg, setShowMsg] = useState(false);
+
 log("center port in -add product-",center.serverPort);
+//------------------------------------- Functions -------------------
+
   const updateProduct = (event) => {
     const { name, value } = event.target;
     setProduct((pdct) => {
@@ -41,14 +49,22 @@ log("center port in -add product-",center.serverPort);
     log("updating Product info: ", product);
   };
   const updateProductImage = (event) => {
-    setImgesFiles(event.target.files[0]); //I used the first picture only
-    //if I want to use mutipel photos i use:...
-    // const imgArray = event.target.files;
-    // for (var i = 0; i < imgArray.length; i++) {
-    //   formData.append("imgesFile", file[i].file, file[i].name);
-    // }
-    // setImgesFile(imgArray);
+    setImgesFiles(event.target.files[0]); 
+    /* for mutipel photos :...
+    const imgArray = event.target.files;
+    for (var i = 0; i < imgArray.length; i++) {
+      formData.append("imgesFile", file[i].file, file[i].name);
+    }
+  setImgesFile(imgArray);*/
   };
+  const clearFields = (event) =>{
+    //event.preventDefault;
+    setProduct(tempProduc);
+    setShowMsg(false);
+    
+    
+  }
+  //------------------------------------- fetch ------------------------------
   const addProduct = async (e) => {
     e.preventDefault();
 
@@ -58,11 +74,15 @@ log("center port in -add product-",center.serverPort);
       "product",
       new Blob([JSON.stringify(product)], { type: "application/json" })
     );
+    if(product.name ===""){
+      setMsg({text:"أدخل اسم المنتج!",color: "red"})
+      setShowMsg(true)
+    }
     if (product.name !== "") {
       try {
         const url = `http://${center.serverIP}:${center.serverPort}/productmedia`;
         console.log(url);
-        const response = await axios.post(url, formData, {
+        await axios.post(url, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: localStorage.getItem("admintoken"),
@@ -70,8 +90,11 @@ log("center port in -add product-",center.serverPort);
           withCredentials: true,
         });
         console.log("Product added.")
+        setShowMsg(true);
         
+        setMsg({text:"تمت اضافة المنتج بنجاح.",color:"green"})
         setProduct(tempProduc);
+        
          setImgesFiles("");
         //ToDo: show msg  of succeed
       } catch (error) {
@@ -97,6 +120,7 @@ log("center port in -add product-",center.serverPort);
   
   console.log("product is :>> ");
   console.log(product);
+  //__________________________UI_______________________________________________
   return (
     <>
       <HeaderControl />
@@ -104,13 +128,7 @@ log("center port in -add product-",center.serverPort);
         <br></br>
         <br></br>
         <h1>اضافة منتج</h1>
-        <form>
-          {/* <div className="row">
-            <div className="form-item id">
-              <label>رقم المنتج</label>
-              <input type="text" name="id" value={product.id} readOnly />
-            </div>
-          </div> */}
+        <form onSubmit={addProduct}>
           <div className="row">
             <div className="form-item">
               <label>اسم المنتج</label>
@@ -219,9 +237,12 @@ log("center port in -add product-",center.serverPort);
             </div>
           </div>
           <div className="control-btns">
-            <button onClick={addProduct}>إدخال منتج</button>
-            <button onClick={() => setProduct(tempProduc)}>مسح الحقول</button>
+            <input type="submit" value="إدخال منتج "/>
+           
+            <button onClick={(e)=>{clearFields(e)}}>مسح الحقول</button>
           </div>
+          {/* {showMsg ? } */}
+          <p style={{color:msg.color, textAlign:"center",fontSize:"18px"}}>{showMsg ? msg.text : ""}</p>{/*still aproblem her -- doesnt show succeed after red alert */}
         </form>
       </div>
     </>

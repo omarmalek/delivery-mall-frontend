@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Order-details.css'
 import { useGlobalContext } from "../context";
 import { FaTimes } from "react-icons/fa";
 
@@ -155,7 +156,7 @@ const OrderDetails = ({ currentOrder, role, setShowOrderDetials }) => {
           </thead>
           <tbody>
             {currentOrder.orderCart
-              ? currentOrder.orderCart.map((item, index) => {
+              ? currentOrder.orderCart.map((item) => {
                   const {
                     id,
                     // productId,

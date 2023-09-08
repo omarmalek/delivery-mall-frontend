@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useGlobalContext } from "../context";
 import Header from "./Header";
+import Footer from '../Footer';
 
 const Login = () => {
   console.log("login proccess is active. ");
@@ -82,8 +83,7 @@ const Login = () => {
     <div>
       <Header />
       <br></br>
-      <br></br>
-      
+     
       <div className="Signup-component">
       <h3>حسابك في مركز تسوق : {center.name}</h3>
         <section>
@@ -123,6 +123,7 @@ const Login = () => {
           </p>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };

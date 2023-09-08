@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
+import '../styles/SignUp.css'
 import {
   faCheck,
   faTimes,

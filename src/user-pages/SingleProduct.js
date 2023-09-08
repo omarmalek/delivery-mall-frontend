@@ -1,8 +1,10 @@
 import React from "react";
+import '../styles/SingleProduct.css'
 import { useGlobalContext } from "../context";
 import noProductImg from "../images/no product image.png";
-import { AiOutlineCheck } from "react-icons/ai";
+// import { AiOutlineCheck } from "react-icons/ai";
 import { FaShekelSign, FaTimes } from "react-icons/fa";
+
 
 
 const SingleProduct = ({ product }) => {
@@ -47,6 +49,7 @@ const SingleProduct = ({ product }) => {
   };
   // const updateProductQuantity = () => {};
   // console.log("SingleProductShort component >> running... ");
+  //_______________________________________UI ___________________________________
   return (
     <div key={id} className="single-product-short row">
       <div

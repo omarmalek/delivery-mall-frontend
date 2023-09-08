@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import '../styles/Update-form.css'
 import { useGlobalContext } from "../context";
 import { FaTimes } from "react-icons/fa";
 import axios from "axios";

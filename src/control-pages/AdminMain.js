@@ -1,11 +1,20 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import '../styles/AdminMain.css'
 import HeaderControl from "./Header-Control";
 import { useGlobalContext } from "../context";
-import { useState } from "react";
+// import { useState } from "react";
 import {tempPhotosList} from "../data"
+import AddProductImg from "../images/control/control-add-product.png"
+import ordersImg from "../images/control/control-orders.png"
+import PrevOrdersImg from "../images/control/control-preve-orders.png"
+import SearchImg from "../images/control/control-search.png"
+import SetterManImg from "../images/control/control-sette-rman.png"
+import DeliveryManImg from "../images/control/control-delivery.png"
 
+
+import {FaListAlt,FaCheckDouble,FaSearch,FaPlusSquare } from "react-icons/fa";
 
 const AdminPage = () => {
   const { center,log} = useGlobalContext();
@@ -47,7 +56,7 @@ const AdminPage = () => {
     try {
       const url = `http://${center.serverIP}:${center.serverPort}/product`;
       console.log(url);
-      const response = await axios.post(url, JSON.stringify(product), {
+      await axios.post(url, JSON.stringify(product), {
         headers: {
           "Content-Type": "application/json",
           Authorization: localStorage.getItem("admintoken"),
@@ -113,27 +122,67 @@ const AdminPage = () => {
   
  //_________________________________________UI________________________________________
   return (
-    <div>
+    <div className="admin-main-component">
       <HeaderControl />
-      <section className="admin-main-component">
-        <br></br>
-        <br></br>
-        <h1>AdminPage</h1>
-        <Link to="/admin/orders">Orders</Link>
-        <br></br>
-        <Link to="/admin/ordres-old">OldOrders</Link>
-        <br></br>
-        <Link to="/admin/addproduct">newProduct</Link>
-        <br></br>
-        <Link to="/admin/searchresult">search</Link>
-        <br></br>
-         <Link to="/admin/addCatgory">Add New Catgory</Link> {/*//TODO: in schedual */}
-         <div>
-        <button onClick={addFakeProducts}>Add Fake Products</button>
-       
+      <br></br>
+      <br></br>
+      <br></br>
+      <div >
+        <h4 className="center-name">  مركز التسوق :   {center.name}</h4>
+     
+      
+
+        <h1>لوحة التحكم</h1> 
+        <div className="control-panel">
+          <div className="control-card">
+            <Link to="/admin/orders"><img src={ordersImg}/>
+            <h3>الطلبات الواردة</h3>
+            </Link> 
+          </div>
+          <div className="control-card">
+            <Link to="/admin/ordres-old"><img src={PrevOrdersImg}/>
+            <h3>الطلبات السابقة</h3>
+            </Link> 
+          </div>
+          <div className="control-card">
+            <Link to="/admin/addproduct"><img src={AddProductImg}/>
+            <h3>أضف منتج</h3>
+            </Link> 
+          </div>
+          <div className="control-card">
+            <Link to="/admin/searchresult"><img src={SearchImg}/>
+            <h3>بحث</h3>
+            </Link> 
+          </div>
+          {/* <div className="control-card">
+            <Link to="#"><img src={SearchImg}/>
+            <h3>Add New Catgory</h3>
+            </Link> 
+          </div> */}
+          
         
+        </div>
+        
+        <hr></hr>
+
+         <div className="temp control-panel">
+         <div className="control-card">
+            <Link to="/set"><img src={SetterManImg}/>
+            <h3>موظف التجهيز</h3>
+            </Link> 
+          </div>
+          <div className="control-card">
+            <Link to="/dv"><img src={DeliveryManImg}/>
+            <h3>موظف الديلفري</h3>
+            </Link> 
+          </div>
+        
+       
+       
+       
+      </div> 
+      <button className="fake-btn" onClick={addFakeProducts}>Add Fake Products</button>
       </div>
-      </section>
     </div>
   );
 };

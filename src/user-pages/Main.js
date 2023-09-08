@@ -14,6 +14,8 @@ function Main() {
       <Exhibition />
       <Footer />
     </main>
+    
+    
   );
 }
 export default Main;

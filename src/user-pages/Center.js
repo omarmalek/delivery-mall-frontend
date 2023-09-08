@@ -1,4 +1,5 @@
 import React ,{useState, useEffect} from "react";
+import '../styles/Center.css'
 import { useNavigate } from "react-router-dom";
 // import center_logo from "../images/center-logo.png"
 import { useGlobalContext } from "../context";
@@ -21,7 +22,7 @@ const startCenter = {
 function Center() {
   let navigate = useNavigate();
 
-  const {baseServer, baseServerPort, setCenter, setPage,setCurrentCatId} = useGlobalContext();
+  const {baseServer, baseServerPort, setCenter,setCurrentCatId} = useGlobalContext();
   const [centersList, setCentersList] = useState([startCenter,startCenter,startCenter]);//TODO: we will get prefaired center from local storage;
  const [loading, setLoading] = useState(true);
   //---------------------------- use Effect ----------------------
@@ -65,22 +66,23 @@ function Center() {
   }
   
   return (
-    <div className="center-component"> 
-    {(centersList !== null && centersList !== undefined)  && centersList.map((center)=>{
-      let logo = startCenter.logo;
-      if(center.logoAsBytes){
-        logo = "data:image/jpeg;base64," + center.logoAsBytes;
-      }
-      
-      
+    <div className="center-component">
+       <div className="container">
+          {(centersList !== null && centersList !== undefined)  && centersList.map((center)=>{
+          let logo = startCenter.logo;
+          if(center.logoAsBytes){
+            logo = "data:image/jpeg;base64," + center.logoAsBytes;
+          }
       return( 
-      <div key={center.id} className="single-logo" onClick={()=>changeCenter(center.name)}>
+      <div key={center.id} className="center-card" onClick={()=>changeCenter(center.name)}>
         <img src={ logo} alt="Mall pic"/>
         <h4>{center.name}</h4>
         </div> ) 
         })
         }
         </div>
+        </div>
+        
         )
 }
 export default Center;
