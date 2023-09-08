@@ -6,6 +6,16 @@
   
     border-collapse: collapse;
   }
+  .customer-history-component .logout button{
+    display: inline;
+    margin:10px;
+    padding:5px 7px;
+    border: 1px solid #27ae60;
+    cursor: pointer;
+  }
+  .customer-history-component .logout button:hover{
+    color:red;
+  }
   .customer-history-component h1 {
     text-align: right;
   }

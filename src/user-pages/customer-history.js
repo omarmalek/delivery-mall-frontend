@@ -116,17 +116,19 @@ function CustomerHistory() {
       <Header />
       <br></br>
       <br></br>
-      <div className="header">
-      <h3>حسابك في مركز تسوق : {center.name}</h3>
-        <h1 className="center">مرحبا {customer.name || "زبوننا الكريم"}</h1>
-        <div className="logout">
+      <div className="customer-history-component">
+      <div className="logout">
           <button type="button" onClick={logout}>
             تسجيل الخروج
           </button>
         </div>
+      <div className="header">
+      <h3>حسابك في مركز تسوق : {center.name}</h3>
+        <h1 className="center">مرحبا {customer.name || "زبوننا الكريم"}</h1>
+        
       </div>
 
-      <div className="customer-history-component">
+      
         {customerOldOrders.length > 0 ? (
           <div className="container">
             <h2 className="center">قائمة الطلبات السابقة</h2>
