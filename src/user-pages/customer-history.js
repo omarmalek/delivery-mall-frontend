@@ -6,6 +6,7 @@ import Loading from "../Loading";
 import OrderDetailsCustomer from "./OrderDetails-Customer"
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import { FaShekelSign} from "react-icons/fa";
 
 function CustomerHistory() {
   //console.log("customer - history");
@@ -127,7 +128,7 @@ function CustomerHistory() {
 
       <div className="customer-history-component">
         {customerOldOrders.length > 0 ? (
-          <div>
+          <div className="container">
             <h2 className="center">قائمة الطلبات السابقة</h2>
             <table>
               <thead>
@@ -135,7 +136,7 @@ function CustomerHistory() {
                   <th>م</th>
                   <th>رقم الطلبية</th>
                   <th>مبلغ الطلبية</th>
-                  <th>اليوم</th>
+                  <th></th>
                   <th>التاريخ</th>
                   <th>فئة التوصيل</th>
                   <th>الحالة</th>
@@ -164,7 +165,7 @@ function CustomerHistory() {
                       </td>
                       <td>{id}</td>
                       <td>
-                        {cartTotal} <i className="fa-solid fa-shekel-sign"></i>
+                        {cartTotal} <i className="fa-solid fa-shekel-sign"><FaShekelSign/></i>
                       </td>
                       <td></td>
                       <td>{date}</td>
@@ -194,9 +195,9 @@ function CustomerHistory() {
                   <th>م</th>
                   <th>رقم الطلبية</th>
                   <th>مبلغ الطلبية</th>
-                  <th> اليوم</th>
+                  <th> </th>
                   <th>وقت الطلب</th>
-                  <th>التاريخ</th>
+                  <th></th>
                   <th>فئة التوصيل</th>
                   <th>حالة الطلبية</th>
                 </tr>
@@ -224,7 +225,7 @@ function CustomerHistory() {
                           <td>{id}</td>
                           <td>
                             {cartTotal}{" "}
-                            <i className="fa-solid fa-shekel-sign"></i>
+                            <i className="fa-solid fa-shekel-sign"><FaShekelSign/></i>
                           </td>
                           <td></td>
                           <td>{date}</td>

@@ -17,6 +17,7 @@ import AdminsLogin from "./control-pages/AdminsLogin";
 import AdminMain from "./control-pages/AdminMain";
 import Main from "./user-pages/Main";
 import AddCenter from "./control-pages/AddCenter";
+import Test from "./Test"
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route exact path="/dv" element={<OrderDeliveryPage />} />
 
         <Route path="*" element={<ErrorPage />} />
+        <Route exact path="/test" element={<Test />} />
       </Routes>
       
     </BrowserRouter>

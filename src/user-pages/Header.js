@@ -37,7 +37,7 @@ function Header() {
         <i
           className="fa fa-search"
           id="search-icon"
-          onClick={showSearchBar}
+          // onClick={showSearchBar}
         >
           <FaSearch/>
         </i>

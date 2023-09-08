@@ -118,7 +118,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               //required
             />
-            <button>Long in</button>
+            <button>تسجيل الدخول</button>
           </form>
         </section>
       </div>

@@ -7,7 +7,7 @@
     padding: 1rem 0.5rem;
     background-color: #fff;
     direction: rtl;
-    /* border: 1px solid #f008d1; */
+    
   }
   
   .Signup-component section {
@@ -20,14 +20,18 @@
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.1);
     border: 1px solid #27ae60;
+   
   }
-  
+  .Signup-component section h1{
+    text-align: center;
+  }
   .Signup-component form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     flex-grow: 1;
     padding-bottom: 1rem;
+     /* border: 10px solid #f008d1; */
   }
   
   .Signup-component a,

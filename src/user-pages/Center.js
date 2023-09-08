@@ -66,21 +66,21 @@ function Center() {
   }
   
   return (
-    <div className="center-component"> 
-    {(centersList !== null && centersList !== undefined)  && centersList.map((center)=>{
-      let logo = startCenter.logo;
-      if(center.logoAsBytes){
-        logo = "data:image/jpeg;base64," + center.logoAsBytes;
-      }
-      
-      
+    <div className="center-component">
+       <div className="container">
+          {(centersList !== null && centersList !== undefined)  && centersList.map((center)=>{
+          let logo = startCenter.logo;
+          if(center.logoAsBytes){
+            logo = "data:image/jpeg;base64," + center.logoAsBytes;
+          }
       return( 
-      <div key={center.id} className="single-logo" onClick={()=>changeCenter(center.name)}>
+      <div key={center.id} className="center-card" onClick={()=>changeCenter(center.name)}>
         <img src={ logo} alt="Mall pic"/>
         <h4>{center.name}</h4>
         </div> ) 
         })
         }
+        </div>
         </div>
         
         )

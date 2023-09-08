@@ -148,6 +148,12 @@
 }
 
 @media (max-width: 768px) {
+ /* .container{
+  width: 100%; 
+ }*/
+ .customer-history-component{
+  margin: 20px 2%;
+ }
  
 }
 
